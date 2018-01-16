@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Model for PaymentMethod
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -68,9 +68,9 @@ class PaymentMethod implements ArrayAccess
     protected static $swaggerTypes = array(
         'id' => 'string',
         'default' => 'bool',
-        'bill_to' => '\Swagger\Client\Model\BaseAddress',
-        'payment_instrument' => '\Swagger\Client\Model\PaymentInstrument',
-        '_links' => '\Swagger\Client\Model\PaymentMethodLinks'
+        'bill_to' => '\authorizenet_rest\Model\BaseAddress',
+        'payment_instrument' => '\authorizenet_rest\Model\PaymentInstrument',
+        '_links' => '\authorizenet_rest\Model\PaymentMethodLinks'
     );
 
     public static function swaggerTypes()
@@ -219,7 +219,7 @@ class PaymentMethod implements ArrayAccess
 
     /**
      * Gets bill_to
-     * @return \Swagger\Client\Model\BaseAddress
+     * @return \authorizenet_rest\Model\BaseAddress
      */
     public function getBillTo()
     {
@@ -228,7 +228,7 @@ class PaymentMethod implements ArrayAccess
 
     /**
      * Sets bill_to
-     * @param \Swagger\Client\Model\BaseAddress $bill_to
+     * @param \authorizenet_rest\Model\BaseAddress $bill_to
      * @return $this
      */
     public function setBillTo($bill_to)
@@ -240,7 +240,7 @@ class PaymentMethod implements ArrayAccess
 
     /**
      * Gets payment_instrument
-     * @return \Swagger\Client\Model\PaymentInstrument
+     * @return \authorizenet_rest\Model\PaymentInstrument
      */
     public function getPaymentInstrument()
     {
@@ -249,7 +249,7 @@ class PaymentMethod implements ArrayAccess
 
     /**
      * Sets payment_instrument
-     * @param \Swagger\Client\Model\PaymentInstrument $payment_instrument
+     * @param \authorizenet_rest\Model\PaymentInstrument $payment_instrument
      * @return $this
      */
     public function setPaymentInstrument($payment_instrument)
@@ -261,7 +261,7 @@ class PaymentMethod implements ArrayAccess
 
     /**
      * Gets _links
-     * @return \Swagger\Client\Model\PaymentMethodLinks
+     * @return \authorizenet_rest\Model\PaymentMethodLinks
      */
     public function getLinks()
     {
@@ -270,7 +270,7 @@ class PaymentMethod implements ArrayAccess
 
     /**
      * Sets _links
-     * @param \Swagger\Client\Model\PaymentMethodLinks $_links
+     * @param \authorizenet_rest\Model\PaymentMethodLinks $_links
      * @return $this
      */
     public function setLinks($_links)
@@ -331,9 +331,9 @@ class PaymentMethod implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -47,7 +47,7 @@ use \ArrayAccess;
  * CreateInvoice Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,15 +67,15 @@ class CreateInvoice implements ArrayAccess
     protected static $swaggerTypes = array(
         'invoice_number' => 'string',
         'description' => 'string',
-        'customer' => '\Swagger\Client\Model\Customer',
+        'customer' => '\authorizenet_rest\Model\Customer',
         'payer_name' => 'string',
         'payment_due_date' => 'string',
         'sub_amount' => 'float',
         'discount_percent' => 'float',
         'discount_amount' => 'float',
         'total_amount' => 'float',
-        'line_items' => '\Swagger\Client\Model\LineItem[]',
-        'tax' => '\Swagger\Client\Model\Tax',
+        'line_items' => '\authorizenet_rest\Model\LineItem[]',
+        'tax' => '\authorizenet_rest\Model\Tax',
         'send_email_immediately' => 'bool'
     );
 
@@ -277,7 +277,7 @@ class CreateInvoice implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \Swagger\Client\Model\Customer
+     * @return \authorizenet_rest\Model\Customer
      */
     public function getCustomer()
     {
@@ -286,7 +286,7 @@ class CreateInvoice implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \Swagger\Client\Model\Customer $customer
+     * @param \authorizenet_rest\Model\Customer $customer
      * @return $this
      */
     public function setCustomer($customer)
@@ -424,7 +424,7 @@ class CreateInvoice implements ArrayAccess
 
     /**
      * Gets line_items
-     * @return \Swagger\Client\Model\LineItem[]
+     * @return \authorizenet_rest\Model\LineItem[]
      */
     public function getLineItems()
     {
@@ -433,7 +433,7 @@ class CreateInvoice implements ArrayAccess
 
     /**
      * Sets line_items
-     * @param \Swagger\Client\Model\LineItem[] $line_items
+     * @param \authorizenet_rest\Model\LineItem[] $line_items
      * @return $this
      */
     public function setLineItems($line_items)
@@ -445,7 +445,7 @@ class CreateInvoice implements ArrayAccess
 
     /**
      * Gets tax
-     * @return \Swagger\Client\Model\Tax
+     * @return \authorizenet_rest\Model\Tax
      */
     public function getTax()
     {
@@ -454,7 +454,7 @@ class CreateInvoice implements ArrayAccess
 
     /**
      * Sets tax
-     * @param \Swagger\Client\Model\Tax $tax
+     * @param \authorizenet_rest\Model\Tax $tax
      * @return $this
      */
     public function setTax($tax)
@@ -536,9 +536,9 @@ class CreateInvoice implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

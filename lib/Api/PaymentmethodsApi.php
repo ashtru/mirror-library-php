@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace authorizenet_rest\Api;
 
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\ObjectSerializer;
+use \authorizenet_rest\Configuration;
+use \authorizenet_rest\ApiClient;
+use \authorizenet_rest\ApiException;
+use \authorizenet_rest\ObjectSerializer;
 
 /**
  * PaymentmethodsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -60,16 +60,16 @@ class PaymentmethodsApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \authorizenet_rest\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \authorizenet_rest\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\authorizenet_rest\ApiClient $apiClient = null)
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
@@ -82,7 +82,7 @@ class PaymentmethodsApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \authorizenet_rest\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -92,11 +92,11 @@ class PaymentmethodsApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \authorizenet_rest\ApiClient $apiClient set the API client
      *
      * @return PaymentmethodsApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\authorizenet_rest\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -108,11 +108,11 @@ class PaymentmethodsApi
      * Create A Payment Method.
      *
      * @param string $customer_id Customer ID (required)
-     * @param \Swagger\Client\Model\CreatePaymentMethod $create_payment_method the \&quot;CreatePaymentMethod\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreatePaymentMethod $create_payment_method the \&quot;CreatePaymentMethod\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\PaymentMethod
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\PaymentMethod
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createPaymentMethod($customer_id, $create_payment_method, $authorization = null)
     {
@@ -127,11 +127,11 @@ class PaymentmethodsApi
      * Create A Payment Method.
      *
      * @param string $customer_id Customer ID (required)
-     * @param \Swagger\Client\Model\CreatePaymentMethod $create_payment_method the \&quot;CreatePaymentMethod\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreatePaymentMethod $create_payment_method the \&quot;CreatePaymentMethod\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\PaymentMethod, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\PaymentMethod, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createPaymentMethodWithHttpInfo($customer_id, $create_payment_method, $authorization = null)
     {
@@ -195,22 +195,22 @@ class PaymentmethodsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PaymentMethod'
+                '\authorizenet_rest\Model\PaymentMethod'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaymentMethod', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\PaymentMethod', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaymentMethod', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\PaymentMethod', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -228,7 +228,7 @@ class PaymentmethodsApi
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
      * @return void
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function deletePaymentmethod($customer_id, $payment_method_id, $authorization = null)
     {
@@ -247,7 +247,7 @@ class PaymentmethodsApi
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
      * @return Array of null, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function deletePaymentmethodWithHttpInfo($customer_id, $payment_method_id, $authorization = null)
     {
@@ -333,8 +333,8 @@ class PaymentmethodsApi
      * @param string $payment_method_id paymentMethod ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\PaymentMethod
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\PaymentMethod
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getCustomerPaymentMethod($customer_id, $payment_method_id, $authorization = null)
     {
@@ -352,8 +352,8 @@ class PaymentmethodsApi
      * @param string $payment_method_id paymentMethod ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\PaymentMethod, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\PaymentMethod, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getCustomerPaymentMethodWithHttpInfo($customer_id, $payment_method_id, $authorization = null)
     {
@@ -420,14 +420,14 @@ class PaymentmethodsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PaymentMethod'
+                '\authorizenet_rest\Model\PaymentMethod'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaymentMethod', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\PaymentMethod', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaymentMethod', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\PaymentMethod', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -443,8 +443,8 @@ class PaymentmethodsApi
      * @param string $customer_id Customer ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\PaymentMethodCollection
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\PaymentMethodCollection
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getCustomerPaymentMethods($customer_id, $authorization = null)
     {
@@ -461,8 +461,8 @@ class PaymentmethodsApi
      * @param string $customer_id Customer ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\PaymentMethodCollection, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\PaymentMethodCollection, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getCustomerPaymentMethodsWithHttpInfo($customer_id, $authorization = null)
     {
@@ -517,14 +517,14 @@ class PaymentmethodsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PaymentMethodCollection'
+                '\authorizenet_rest\Model\PaymentMethodCollection'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaymentMethodCollection', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\PaymentMethodCollection', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaymentMethodCollection', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\PaymentMethodCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -539,11 +539,11 @@ class PaymentmethodsApi
      *
      * @param string $customer_id Customer ID (required)
      * @param string $payment_method_id paymentMethod ID (required)
-     * @param \Swagger\Client\Model\CreatePaymentMethod $create_payment_method the \&quot;UpdateAPaymentMethod\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreatePaymentMethod $create_payment_method the \&quot;UpdateAPaymentMethod\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\PaymentMethod
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\PaymentMethod
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function updatePaymentMethod($customer_id, $payment_method_id, $create_payment_method, $authorization = null)
     {
@@ -559,11 +559,11 @@ class PaymentmethodsApi
      *
      * @param string $customer_id Customer ID (required)
      * @param string $payment_method_id paymentMethod ID (required)
-     * @param \Swagger\Client\Model\CreatePaymentMethod $create_payment_method the \&quot;UpdateAPaymentMethod\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreatePaymentMethod $create_payment_method the \&quot;UpdateAPaymentMethod\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\PaymentMethod, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\PaymentMethod, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function updatePaymentMethodWithHttpInfo($customer_id, $payment_method_id, $create_payment_method, $authorization = null)
     {
@@ -639,22 +639,22 @@ class PaymentmethodsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PaymentMethod'
+                '\authorizenet_rest\Model\PaymentMethod'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PaymentMethod', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\PaymentMethod', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PaymentMethod', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\PaymentMethod', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

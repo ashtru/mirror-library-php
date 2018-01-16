@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -47,7 +47,7 @@ use \ArrayAccess;
  * SelfLink Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -65,7 +65,7 @@ class SelfLink implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'self' => '\Swagger\Client\Model\Link'
+        'self' => '\authorizenet_rest\Model\Link'
     );
 
     public static function swaggerTypes()
@@ -156,7 +156,7 @@ class SelfLink implements ArrayAccess
 
     /**
      * Gets self
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getSelf()
     {
@@ -165,7 +165,7 @@ class SelfLink implements ArrayAccess
 
     /**
      * Sets self
-     * @param \Swagger\Client\Model\Link $self
+     * @param \authorizenet_rest\Model\Link $self
      * @return $this
      */
     public function setSelf($self)
@@ -226,9 +226,9 @@ class SelfLink implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

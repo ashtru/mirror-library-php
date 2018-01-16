@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -47,7 +47,7 @@ use \ArrayAccess;
  * PaymentMethodLinks Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -65,8 +65,8 @@ class PaymentMethodLinks implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'self' => '\Swagger\Client\Model\Link',
-        'customer' => '\Swagger\Client\Model\Link'
+        'self' => '\authorizenet_rest\Model\Link',
+        'customer' => '\authorizenet_rest\Model\Link'
     );
 
     public static function swaggerTypes()
@@ -161,7 +161,7 @@ class PaymentMethodLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getSelf()
     {
@@ -170,7 +170,7 @@ class PaymentMethodLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \Swagger\Client\Model\Link $self
+     * @param \authorizenet_rest\Model\Link $self
      * @return $this
      */
     public function setSelf($self)
@@ -182,7 +182,7 @@ class PaymentMethodLinks implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getCustomer()
     {
@@ -191,7 +191,7 @@ class PaymentMethodLinks implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \Swagger\Client\Model\Link $customer
+     * @param \authorizenet_rest\Model\Link $customer
      * @return $this
      */
     public function setCustomer($customer)
@@ -252,9 +252,9 @@ class PaymentMethodLinks implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

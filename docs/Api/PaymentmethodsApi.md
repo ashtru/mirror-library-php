@@ -1,4 +1,4 @@
-# Swagger\Client\PaymentmethodsApi
+# authorizenet_rest\PaymentmethodsApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createPaymentMethod**
-> \Swagger\Client\Model\PaymentMethod createPaymentMethod($customer_id, $create_payment_method, $authorization)
+> \authorizenet_rest\Model\PaymentMethod createPaymentMethod($customer_id, $create_payment_method, $authorization)
 
 Create A Payment Method
 
@@ -23,9 +23,9 @@ Create A Payment Method
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentmethodsApi();
+$api_instance = new authorizenet_rest\Api\PaymentmethodsApi();
 $customer_id = "customer_id_example"; // string | Customer ID
-$create_payment_method = new \Swagger\Client\Model\CreatePaymentMethod(); // \Swagger\Client\Model\CreatePaymentMethod | the \"CreatePaymentMethod\" model
+$create_payment_method = new \authorizenet_rest\Model\CreatePaymentMethod(); // \authorizenet_rest\Model\CreatePaymentMethod | the \"CreatePaymentMethod\" model
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -42,12 +42,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **string**| Customer ID |
- **create_payment_method** | [**\Swagger\Client\Model\CreatePaymentMethod**](../Model/CreatePaymentMethod.md)| the \&quot;CreatePaymentMethod\&quot; model |
+ **create_payment_method** | [**\authorizenet_rest\Model\CreatePaymentMethod**](../Model/CreatePaymentMethod.md)| the \&quot;CreatePaymentMethod\&quot; model |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethod**](../Model/PaymentMethod.md)
+[**\authorizenet_rest\Model\PaymentMethod**](../Model/PaymentMethod.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Deletes a paymentmethods
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentmethodsApi();
+$api_instance = new authorizenet_rest\Api\PaymentmethodsApi();
 $customer_id = "customer_id_example"; // string | Customer ID
 $payment_method_id = "payment_method_id_example"; // string | paymentMethod ID
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
@@ -109,7 +109,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerPaymentMethod**
-> \Swagger\Client\Model\PaymentMethod getCustomerPaymentMethod($customer_id, $payment_method_id, $authorization)
+> \authorizenet_rest\Model\PaymentMethod getCustomerPaymentMethod($customer_id, $payment_method_id, $authorization)
 
 Get Customer Payment Method
 
@@ -120,7 +120,7 @@ Get Customer Payment Method
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentmethodsApi();
+$api_instance = new authorizenet_rest\Api\PaymentmethodsApi();
 $customer_id = "customer_id_example"; // string | Customer ID
 $payment_method_id = "payment_method_id_example"; // string | paymentMethod ID
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethod**](../Model/PaymentMethod.md)
+[**\authorizenet_rest\Model\PaymentMethod**](../Model/PaymentMethod.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerPaymentMethods**
-> \Swagger\Client\Model\PaymentMethodCollection getCustomerPaymentMethods($customer_id, $authorization)
+> \authorizenet_rest\Model\PaymentMethodCollection getCustomerPaymentMethods($customer_id, $authorization)
 
 Get Customer Payment Methods
 
@@ -169,7 +169,7 @@ Get Customer Payment Methods
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentmethodsApi();
+$api_instance = new authorizenet_rest\Api\PaymentmethodsApi();
 $customer_id = "customer_id_example"; // string | Customer ID
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethodCollection**](../Model/PaymentMethodCollection.md)
+[**\authorizenet_rest\Model\PaymentMethodCollection**](../Model/PaymentMethodCollection.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePaymentMethod**
-> \Swagger\Client\Model\PaymentMethod updatePaymentMethod($customer_id, $payment_method_id, $create_payment_method, $authorization)
+> \authorizenet_rest\Model\PaymentMethod updatePaymentMethod($customer_id, $payment_method_id, $create_payment_method, $authorization)
 
 Update A paymentMethod
 
@@ -216,10 +216,10 @@ Update A paymentMethod
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentmethodsApi();
+$api_instance = new authorizenet_rest\Api\PaymentmethodsApi();
 $customer_id = "customer_id_example"; // string | Customer ID
 $payment_method_id = "payment_method_id_example"; // string | paymentMethod ID
-$create_payment_method = new \Swagger\Client\Model\CreatePaymentMethod(); // \Swagger\Client\Model\CreatePaymentMethod | the \"UpdateAPaymentMethod\" model
+$create_payment_method = new \authorizenet_rest\Model\CreatePaymentMethod(); // \authorizenet_rest\Model\CreatePaymentMethod | the \"UpdateAPaymentMethod\" model
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -237,12 +237,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **string**| Customer ID |
  **payment_method_id** | **string**| paymentMethod ID |
- **create_payment_method** | [**\Swagger\Client\Model\CreatePaymentMethod**](../Model/CreatePaymentMethod.md)| the \&quot;UpdateAPaymentMethod\&quot; model |
+ **create_payment_method** | [**\authorizenet_rest\Model\CreatePaymentMethod**](../Model/CreatePaymentMethod.md)| the \&quot;UpdateAPaymentMethod\&quot; model |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethod**](../Model/PaymentMethod.md)
+[**\authorizenet_rest\Model\PaymentMethod**](../Model/PaymentMethod.md)
 
 ### Authorization
 

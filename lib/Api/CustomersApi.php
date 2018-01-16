@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace authorizenet_rest\Api;
 
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\ObjectSerializer;
+use \authorizenet_rest\Configuration;
+use \authorizenet_rest\ApiClient;
+use \authorizenet_rest\ApiException;
+use \authorizenet_rest\ObjectSerializer;
 
 /**
  * CustomersApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -60,16 +60,16 @@ class CustomersApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \authorizenet_rest\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \authorizenet_rest\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\authorizenet_rest\ApiClient $apiClient = null)
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
@@ -82,7 +82,7 @@ class CustomersApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \authorizenet_rest\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -92,11 +92,11 @@ class CustomersApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \authorizenet_rest\ApiClient $apiClient set the API client
      *
      * @return CustomersApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\authorizenet_rest\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -107,11 +107,11 @@ class CustomersApi
      *
      * Create A Customer.
      *
-     * @param \Swagger\Client\Model\CreateCustomer $create_customer the \&quot;CreateCustomer\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreateCustomer $create_customer the \&quot;CreateCustomer\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Customer
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Customer
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createCustomer($create_customer, $authorization = null)
     {
@@ -125,11 +125,11 @@ class CustomersApi
      *
      * Create A Customer.
      *
-     * @param \Swagger\Client\Model\CreateCustomer $create_customer the \&quot;CreateCustomer\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreateCustomer $create_customer the \&quot;CreateCustomer\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Customer, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createCustomerWithHttpInfo($create_customer, $authorization = null)
     {
@@ -181,14 +181,14 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Customer'
+                '\authorizenet_rest\Model\Customer'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Customer', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Customer', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Customer', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -205,7 +205,7 @@ class CustomersApi
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
      * @return void
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function deleteCustomer($customer_id, $authorization = null)
     {
@@ -223,7 +223,7 @@ class CustomersApi
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
      * @return Array of null, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function deleteCustomerWithHttpInfo($customer_id, $authorization = null)
     {
@@ -295,8 +295,8 @@ class CustomersApi
      *
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\CustomerCollection
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\CustomerCollection
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getAllCustomers($authorization = null)
     {
@@ -312,8 +312,8 @@ class CustomersApi
      *
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\CustomerCollection, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\CustomerCollection, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getAllCustomersWithHttpInfo($authorization = null)
     {
@@ -356,14 +356,14 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CustomerCollection'
+                '\authorizenet_rest\Model\CustomerCollection'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CustomerCollection', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\CustomerCollection', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CustomerCollection', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\CustomerCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -379,8 +379,8 @@ class CustomersApi
      * @param string $customer_id Customer ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Customer
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Customer
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getCustomer($customer_id, $authorization = null)
     {
@@ -397,8 +397,8 @@ class CustomersApi
      * @param string $customer_id Customer ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Customer, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getCustomerWithHttpInfo($customer_id, $authorization = null)
     {
@@ -453,14 +453,14 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Customer'
+                '\authorizenet_rest\Model\Customer'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Customer', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Customer', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Customer', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -474,11 +474,11 @@ class CustomersApi
      * Update A Customer.
      *
      * @param string $customer_id Customer ID (required)
-     * @param \Swagger\Client\Model\CreateCustomer $create_customer the \&quot;UpdateCustomer\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreateCustomer $create_customer the \&quot;UpdateCustomer\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Customer
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Customer
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function updateCustomer($customer_id, $create_customer, $authorization = null)
     {
@@ -493,11 +493,11 @@ class CustomersApi
      * Update A Customer.
      *
      * @param string $customer_id Customer ID (required)
-     * @param \Swagger\Client\Model\CreateCustomer $create_customer the \&quot;UpdateCustomer\&quot; model (required)
+     * @param \authorizenet_rest\Model\CreateCustomer $create_customer the \&quot;UpdateCustomer\&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Customer, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function updateCustomerWithHttpInfo($customer_id, $create_customer, $authorization = null)
     {
@@ -561,22 +561,22 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Customer'
+                '\authorizenet_rest\Model\Customer'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Customer', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Customer', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Customer', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

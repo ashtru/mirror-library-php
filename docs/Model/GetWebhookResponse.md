@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_links** | [**\Swagger\Client\Model\SelfLink**](SelfLink.md) |  | 
+**_links** | [**\authorizenet_rest\Model\SelfLink**](SelfLink.md) |  | 
 **webhook_id** | **string** | Label of the new Webhook | 
 **name** | **string** | Label of the new Webhook | [optional] 
 **status** | **string** | Status of the new Webhook | 

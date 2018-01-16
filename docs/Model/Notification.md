@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_links** | [**\Swagger\Client\Model\SelfLink**](SelfLink.md) |  | 
+**_links** | [**\authorizenet_rest\Model\SelfLink**](SelfLink.md) |  | 
 **notification_id** | **string** | Label of the notification | 
 **delivery_status** | **string** | Status of the pings | 
 **event_type** | **string** | Type of the pings | 

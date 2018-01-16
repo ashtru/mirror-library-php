@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -47,7 +47,7 @@ use \ArrayAccess;
  * CustomerList Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -65,7 +65,7 @@ class CustomerList implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'customers' => '\Swagger\Client\Model\Customer[]'
+        'customers' => '\authorizenet_rest\Model\Customer[]'
     );
 
     public static function swaggerTypes()
@@ -156,7 +156,7 @@ class CustomerList implements ArrayAccess
 
     /**
      * Gets customers
-     * @return \Swagger\Client\Model\Customer[]
+     * @return \authorizenet_rest\Model\Customer[]
      */
     public function getCustomers()
     {
@@ -165,7 +165,7 @@ class CustomerList implements ArrayAccess
 
     /**
      * Sets customers
-     * @param \Swagger\Client\Model\Customer[] $customers
+     * @param \authorizenet_rest\Model\Customer[] $customers
      * @return $this
      */
     public function setCustomers($customers)
@@ -226,9 +226,9 @@ class CustomerList implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

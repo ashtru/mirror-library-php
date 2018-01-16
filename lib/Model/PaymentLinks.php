@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -47,7 +47,7 @@ use \ArrayAccess;
  * PaymentLinks Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -65,9 +65,9 @@ class PaymentLinks implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'self' => '\Swagger\Client\Model\Link',
-        'refund' => '\Swagger\Client\Model\Link',
-        'capture' => '\Swagger\Client\Model\Link'
+        'self' => '\authorizenet_rest\Model\Link',
+        'refund' => '\authorizenet_rest\Model\Link',
+        'capture' => '\authorizenet_rest\Model\Link'
     );
 
     public static function swaggerTypes()
@@ -166,7 +166,7 @@ class PaymentLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getSelf()
     {
@@ -175,7 +175,7 @@ class PaymentLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \Swagger\Client\Model\Link $self
+     * @param \authorizenet_rest\Model\Link $self
      * @return $this
      */
     public function setSelf($self)
@@ -187,7 +187,7 @@ class PaymentLinks implements ArrayAccess
 
     /**
      * Gets refund
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getRefund()
     {
@@ -196,7 +196,7 @@ class PaymentLinks implements ArrayAccess
 
     /**
      * Sets refund
-     * @param \Swagger\Client\Model\Link $refund
+     * @param \authorizenet_rest\Model\Link $refund
      * @return $this
      */
     public function setRefund($refund)
@@ -208,7 +208,7 @@ class PaymentLinks implements ArrayAccess
 
     /**
      * Gets capture
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getCapture()
     {
@@ -217,7 +217,7 @@ class PaymentLinks implements ArrayAccess
 
     /**
      * Sets capture
-     * @param \Swagger\Client\Model\Link $capture
+     * @param \authorizenet_rest\Model\Link $capture
      * @return $this
      */
     public function setCapture($capture)
@@ -278,9 +278,9 @@ class PaymentLinks implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

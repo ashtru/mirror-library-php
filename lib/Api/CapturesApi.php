@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace authorizenet_rest\Api;
 
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\ObjectSerializer;
+use \authorizenet_rest\Configuration;
+use \authorizenet_rest\ApiClient;
+use \authorizenet_rest\ApiException;
+use \authorizenet_rest\ObjectSerializer;
 
 /**
  * CapturesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -60,16 +60,16 @@ class CapturesApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \authorizenet_rest\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \authorizenet_rest\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\authorizenet_rest\ApiClient $apiClient = null)
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
@@ -82,7 +82,7 @@ class CapturesApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \authorizenet_rest\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -92,11 +92,11 @@ class CapturesApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \authorizenet_rest\ApiClient $apiClient set the API client
      *
      * @return CapturesApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\authorizenet_rest\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -108,11 +108,11 @@ class CapturesApi
      * .
      *
      * @param string $payment_id  (required)
-     * @param \Swagger\Client\Model\CaptureRequest $body  (required)
+     * @param \authorizenet_rest\Model\CaptureRequest $body  (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Payment
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Payment
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createACapture($payment_id, $body, $authorization = null)
     {
@@ -127,11 +127,11 @@ class CapturesApi
      * .
      *
      * @param string $payment_id  (required)
-     * @param \Swagger\Client\Model\CaptureRequest $body  (required)
+     * @param \authorizenet_rest\Model\CaptureRequest $body  (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Payment, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Payment, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createACaptureWithHttpInfo($payment_id, $body, $authorization = null)
     {
@@ -195,22 +195,22 @@ class CapturesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Payment'
+                '\authorizenet_rest\Model\Payment'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Payment', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Payment', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Payment', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Payment', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

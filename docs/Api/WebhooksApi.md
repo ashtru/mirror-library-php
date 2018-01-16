@@ -1,4 +1,4 @@
-# Swagger\Client\WebhooksApi
+# authorizenet_rest\WebhooksApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createWebhook**
-> \Swagger\Client\Model\GetWebhookResponse createWebhook($create_webhook_body, $authorization)
+> \authorizenet_rest\Model\GetWebhookResponse createWebhook($create_webhook_body, $authorization)
 
 Create A Webhook
 
@@ -24,8 +24,8 @@ Enroll in one or more particular type of event notification
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
-$create_webhook_body = new \Swagger\Client\Model\CreateWebhookBody(); // \Swagger\Client\Model\CreateWebhookBody | the \"CreateWebhookBody\" model
+$api_instance = new authorizenet_rest\Api\WebhooksApi();
+$create_webhook_body = new \authorizenet_rest\Model\CreateWebhookBody(); // \authorizenet_rest\Model\CreateWebhookBody | the \"CreateWebhookBody\" model
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -41,12 +41,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_webhook_body** | [**\Swagger\Client\Model\CreateWebhookBody**](../Model/CreateWebhookBody.md)| the \&quot;CreateWebhookBody\&quot; model |
+ **create_webhook_body** | [**\authorizenet_rest\Model\CreateWebhookBody**](../Model/CreateWebhookBody.md)| the \&quot;CreateWebhookBody\&quot; model |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWebhookResponse**](../Model/GetWebhookResponse.md)
+[**\authorizenet_rest\Model\GetWebhookResponse**](../Model/GetWebhookResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Delete an existing Webhook
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new authorizenet_rest\Api\WebhooksApi();
 $webhook_id = "webhook_id_example"; // string | ID of webhook to return
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -106,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhook**
-> \Swagger\Client\Model\GetWebhookResponse getWebhook($webhook_id, $authorization)
+> \authorizenet_rest\Model\GetWebhookResponse getWebhook($webhook_id, $authorization)
 
 Get A Webhook
 
@@ -117,7 +117,7 @@ Retrieve details of an existing Webhook
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new authorizenet_rest\Api\WebhooksApi();
 $webhook_id = "webhook_id_example"; // string | ID of webhook to return
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWebhookResponse**](../Model/GetWebhookResponse.md)
+[**\authorizenet_rest\Model\GetWebhookResponse**](../Model/GetWebhookResponse.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Swagger\Client\Model\GetWebhookResponse[] getWebhooks($authorization)
+> \authorizenet_rest\Model\GetWebhookResponse[] getWebhooks($authorization)
 
 List My Webhooks
 
@@ -164,7 +164,7 @@ Retrieve details of existing Webhooks
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new authorizenet_rest\Api\WebhooksApi();
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWebhookResponse[]**](../Model/GetWebhookResponse.md)
+[**\authorizenet_rest\Model\GetWebhookResponse[]**](../Model/GetWebhookResponse.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ A test event is sent to the Webhook (in an inactive state) endpoint
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new authorizenet_rest\Api\WebhooksApi();
 $webhook_id = "webhook_id_example"; // string | ID of webhook to return
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -244,7 +244,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhook**
-> \Swagger\Client\Model\GetWebhookResponse updateWebhook($webhook_id, $update_webhook_body, $authorization)
+> \authorizenet_rest\Model\GetWebhookResponse updateWebhook($webhook_id, $update_webhook_body, $authorization)
 
 Update A Webhook
 
@@ -255,9 +255,9 @@ Update an existing Webhook
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new authorizenet_rest\Api\WebhooksApi();
 $webhook_id = "webhook_id_example"; // string | ID of webhook to return
-$update_webhook_body = new \Swagger\Client\Model\CreateWebhookBody(); // \Swagger\Client\Model\CreateWebhookBody | the \"CreateWebhookBody\" model
+$update_webhook_body = new \authorizenet_rest\Model\CreateWebhookBody(); // \authorizenet_rest\Model\CreateWebhookBody | the \"CreateWebhookBody\" model
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -274,12 +274,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhook_id** | **string**| ID of webhook to return |
- **update_webhook_body** | [**\Swagger\Client\Model\CreateWebhookBody**](../Model/CreateWebhookBody.md)| the \&quot;CreateWebhookBody\&quot; model |
+ **update_webhook_body** | [**\authorizenet_rest\Model\CreateWebhookBody**](../Model/CreateWebhookBody.md)| the \&quot;CreateWebhookBody\&quot; model |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWebhookResponse**](../Model/GetWebhookResponse.md)
+[**\authorizenet_rest\Model\GetWebhookResponse**](../Model/GetWebhookResponse.md)
 
 ### Authorization
 

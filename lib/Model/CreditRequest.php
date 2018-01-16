@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Model for CreditRequest
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -66,8 +66,8 @@ class CreditRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'amount_detail' => '\Swagger\Client\Model\AmountDetail',
-        'payment_instrument' => '\Swagger\Client\Model\PaymentInstrument'
+        'amount_detail' => '\authorizenet_rest\Model\AmountDetail',
+        'payment_instrument' => '\authorizenet_rest\Model\PaymentInstrument'
     );
 
     public static function swaggerTypes()
@@ -174,7 +174,7 @@ class CreditRequest implements ArrayAccess
 
     /**
      * Gets amount_detail
-     * @return \Swagger\Client\Model\AmountDetail
+     * @return \authorizenet_rest\Model\AmountDetail
      */
     public function getAmountDetail()
     {
@@ -183,7 +183,7 @@ class CreditRequest implements ArrayAccess
 
     /**
      * Sets amount_detail
-     * @param \Swagger\Client\Model\AmountDetail $amount_detail
+     * @param \authorizenet_rest\Model\AmountDetail $amount_detail
      * @return $this
      */
     public function setAmountDetail($amount_detail)
@@ -195,7 +195,7 @@ class CreditRequest implements ArrayAccess
 
     /**
      * Gets payment_instrument
-     * @return \Swagger\Client\Model\PaymentInstrument
+     * @return \authorizenet_rest\Model\PaymentInstrument
      */
     public function getPaymentInstrument()
     {
@@ -204,7 +204,7 @@ class CreditRequest implements ArrayAccess
 
     /**
      * Sets payment_instrument
-     * @param \Swagger\Client\Model\PaymentInstrument $payment_instrument
+     * @param \authorizenet_rest\Model\PaymentInstrument $payment_instrument
      * @return $this
      */
     public function setPaymentInstrument($payment_instrument)
@@ -265,9 +265,9 @@ class CreditRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

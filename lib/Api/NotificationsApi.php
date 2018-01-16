@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace authorizenet_rest\Api;
 
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\ObjectSerializer;
+use \authorizenet_rest\Configuration;
+use \authorizenet_rest\ApiClient;
+use \authorizenet_rest\ApiException;
+use \authorizenet_rest\ObjectSerializer;
 
 /**
  * NotificationsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -60,16 +60,16 @@ class NotificationsApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \authorizenet_rest\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \authorizenet_rest\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\authorizenet_rest\ApiClient $apiClient = null)
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
@@ -82,7 +82,7 @@ class NotificationsApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \authorizenet_rest\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -92,11 +92,11 @@ class NotificationsApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \authorizenet_rest\ApiClient $apiClient set the API client
      *
      * @return NotificationsApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\authorizenet_rest\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -110,8 +110,8 @@ class NotificationsApi
      * @param string $notifications_id ID of notification to return (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\GetNotificationResponse
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\GetNotificationResponse
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getNotification($notifications_id, $authorization = null)
     {
@@ -128,8 +128,8 @@ class NotificationsApi
      * @param string $notifications_id ID of notification to return (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\GetNotificationResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\GetNotificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getNotificationWithHttpInfo($notifications_id, $authorization = null)
     {
@@ -184,26 +184,26 @@ class NotificationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetNotificationResponse'
+                '\authorizenet_rest\Model\GetNotificationResponse'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetNotificationResponse', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\GetNotificationResponse', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetNotificationResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\GetNotificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -223,8 +223,8 @@ class NotificationsApi
      * @param int $offset Only include notifications above of offset (optional)
      * @param int $limit Limit number of notifications (optional)
      *
-     * @return \Swagger\Client\Model\GetNotificationsResponse
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\GetNotificationsResponse
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getNotifications($authorization = null, $delivery_status = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
@@ -245,8 +245,8 @@ class NotificationsApi
      * @param int $offset Only include notifications above of offset (optional)
      * @param int $limit Limit number of notifications (optional)
      *
-     * @return Array of \Swagger\Client\Model\GetNotificationsResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\GetNotificationsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getNotificationsWithHttpInfo($authorization = null, $delivery_status = null, $from_date = null, $to_date = null, $offset = null, $limit = null)
     {
@@ -304,22 +304,22 @@ class NotificationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetNotificationsResponse'
+                '\authorizenet_rest\Model\GetNotificationsResponse'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetNotificationsResponse', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\GetNotificationsResponse', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetNotificationsResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\GetNotificationsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

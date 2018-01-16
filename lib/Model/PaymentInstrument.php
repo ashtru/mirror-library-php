@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Model for PaymentInstrument
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -66,10 +66,10 @@ class PaymentInstrument implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'credit_card' => '\Swagger\Client\Model\CreditCard',
-        'bank_account' => '\Swagger\Client\Model\BankAccount',
-        'fluid_data' => '\Swagger\Client\Model\FluidData',
-        'customer' => '\Swagger\Client\Model\CustomerPayment',
+        'credit_card' => '\authorizenet_rest\Model\CreditCard',
+        'bank_account' => '\authorizenet_rest\Model\BankAccount',
+        'fluid_data' => '\authorizenet_rest\Model\FluidData',
+        'customer' => '\authorizenet_rest\Model\CustomerPayment',
         'validate' => 'bool'
     );
 
@@ -177,7 +177,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets credit_card
-     * @return \Swagger\Client\Model\CreditCard
+     * @return \authorizenet_rest\Model\CreditCard
      */
     public function getCreditCard()
     {
@@ -186,7 +186,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets credit_card
-     * @param \Swagger\Client\Model\CreditCard $credit_card
+     * @param \authorizenet_rest\Model\CreditCard $credit_card
      * @return $this
      */
     public function setCreditCard($credit_card)
@@ -198,7 +198,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets bank_account
-     * @return \Swagger\Client\Model\BankAccount
+     * @return \authorizenet_rest\Model\BankAccount
      */
     public function getBankAccount()
     {
@@ -207,7 +207,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets bank_account
-     * @param \Swagger\Client\Model\BankAccount $bank_account
+     * @param \authorizenet_rest\Model\BankAccount $bank_account
      * @return $this
      */
     public function setBankAccount($bank_account)
@@ -219,7 +219,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets fluid_data
-     * @return \Swagger\Client\Model\FluidData
+     * @return \authorizenet_rest\Model\FluidData
      */
     public function getFluidData()
     {
@@ -228,7 +228,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets fluid_data
-     * @param \Swagger\Client\Model\FluidData $fluid_data
+     * @param \authorizenet_rest\Model\FluidData $fluid_data
      * @return $this
      */
     public function setFluidData($fluid_data)
@@ -240,7 +240,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \Swagger\Client\Model\CustomerPayment
+     * @return \authorizenet_rest\Model\CustomerPayment
      */
     public function getCustomer()
     {
@@ -249,7 +249,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \Swagger\Client\Model\CustomerPayment $customer
+     * @param \authorizenet_rest\Model\CustomerPayment $customer
      * @return $this
      */
     public function setCustomer($customer)
@@ -331,9 +331,9 @@ class PaymentInstrument implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

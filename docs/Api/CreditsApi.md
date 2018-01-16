@@ -1,4 +1,4 @@
-# Swagger\Client\CreditsApi
+# authorizenet_rest\CreditsApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **createACredit**
-> \Swagger\Client\Model\Payment createACredit($body, $authorization)
+> \authorizenet_rest\Model\Payment createACredit($body, $authorization)
 
 
 
@@ -19,8 +19,8 @@ Create A Credit
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CreditsApi();
-$body = new \Swagger\Client\Model\CreditRequest(); // \Swagger\Client\Model\CreditRequest | 
+$api_instance = new authorizenet_rest\Api\CreditsApi();
+$body = new \authorizenet_rest\Model\CreditRequest(); // \authorizenet_rest\Model\CreditRequest | 
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -36,12 +36,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreditRequest**](../Model/CreditRequest.md)|  |
+ **body** | [**\authorizenet_rest\Model\CreditRequest**](../Model/CreditRequest.md)|  |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Payment**](../Model/Payment.md)
+[**\authorizenet_rest\Model\Payment**](../Model/Payment.md)
 
 ### Authorization
 

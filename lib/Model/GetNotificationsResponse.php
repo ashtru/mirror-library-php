@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Response model for get a Notification
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -66,8 +66,8 @@ class GetNotificationsResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        '_links' => '\Swagger\Client\Model\SelfLink',
-        'notifications' => '\Swagger\Client\Model\Notification[]'
+        '_links' => '\authorizenet_rest\Model\SelfLink',
+        'notifications' => '\authorizenet_rest\Model\Notification[]'
     );
 
     public static function swaggerTypes()
@@ -174,7 +174,7 @@ class GetNotificationsResponse implements ArrayAccess
 
     /**
      * Gets _links
-     * @return \Swagger\Client\Model\SelfLink
+     * @return \authorizenet_rest\Model\SelfLink
      */
     public function getLinks()
     {
@@ -183,7 +183,7 @@ class GetNotificationsResponse implements ArrayAccess
 
     /**
      * Sets _links
-     * @param \Swagger\Client\Model\SelfLink $_links
+     * @param \authorizenet_rest\Model\SelfLink $_links
      * @return $this
      */
     public function setLinks($_links)
@@ -195,7 +195,7 @@ class GetNotificationsResponse implements ArrayAccess
 
     /**
      * Gets notifications
-     * @return \Swagger\Client\Model\Notification[]
+     * @return \authorizenet_rest\Model\Notification[]
      */
     public function getNotifications()
     {
@@ -204,7 +204,7 @@ class GetNotificationsResponse implements ArrayAccess
 
     /**
      * Sets notifications
-     * @param \Swagger\Client\Model\Notification[] $notifications
+     * @param \authorizenet_rest\Model\Notification[] $notifications
      * @return $this
      */
     public function setNotifications($notifications)
@@ -265,9 +265,9 @@ class GetNotificationsResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_id** | **string** |  | [optional] 
-**bill_to** | [**\Swagger\Client\Model\BaseAddress**](BaseAddress.md) |  | [optional] 
+**bill_to** | [**\authorizenet_rest\Model\BaseAddress**](BaseAddress.md) |  | [optional] 
 **default** | **bool** |  | [optional] 
-**payment** | [**\Swagger\Client\Model\PaymentInstrument**](PaymentInstrument.md) |  | [optional] 
+**payment** | [**\authorizenet_rest\Model\PaymentInstrument**](PaymentInstrument.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

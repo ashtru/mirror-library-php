@@ -1,4 +1,4 @@
-# Swagger\Client\PaymentsApi
+# authorizenet_rest\PaymentsApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createAPayment**
-> \Swagger\Client\Model\Payment createAPayment($payment_request, $authorization)
+> \authorizenet_rest\Model\Payment createAPayment($payment_request, $authorization)
 
 
 
@@ -21,8 +21,8 @@ Create A Payment
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentsApi();
-$payment_request = new \Swagger\Client\Model\PaymentRequest(); // \Swagger\Client\Model\PaymentRequest | charge credit card model
+$api_instance = new authorizenet_rest\Api\PaymentsApi();
+$payment_request = new \authorizenet_rest\Model\PaymentRequest(); // \authorizenet_rest\Model\PaymentRequest | charge credit card model
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -38,12 +38,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payment_request** | [**\Swagger\Client\Model\PaymentRequest**](../Model/PaymentRequest.md)| charge credit card model |
+ **payment_request** | [**\authorizenet_rest\Model\PaymentRequest**](../Model/PaymentRequest.md)| charge credit card model |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Payment**](../Model/Payment.md)
+[**\authorizenet_rest\Model\Payment**](../Model/Payment.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAPayment**
-> \Swagger\Client\Model\Payment getAPayment($payment_id, $authorization)
+> \authorizenet_rest\Model\Payment getAPayment($payment_id, $authorization)
 
 
 
@@ -68,7 +68,7 @@ Get A Payment
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentsApi();
+$api_instance = new authorizenet_rest\Api\PaymentsApi();
 $payment_id = "payment_id_example"; // string | 
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Payment**](../Model/Payment.md)
+[**\authorizenet_rest\Model\Payment**](../Model/Payment.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllPayments**
-> \Swagger\Client\Model\PaymentCollection getAllPayments($authorization)
+> \authorizenet_rest\Model\PaymentCollection getAllPayments($authorization)
 
 
 
@@ -115,7 +115,7 @@ Get all Payments
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\PaymentsApi();
+$api_instance = new authorizenet_rest\Api\PaymentsApi();
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentCollection**](../Model/PaymentCollection.md)
+[**\authorizenet_rest\Model\PaymentCollection**](../Model/PaymentCollection.md)
 
 ### Authorization
 

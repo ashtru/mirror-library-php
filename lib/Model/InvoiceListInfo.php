@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Invoice List Info
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -72,8 +72,8 @@ class InvoiceListInfo implements ArrayAccess
         'payment_due_date' => 'string',
         'total_amount' => 'float',
         'status' => 'string',
-        'self' => '\Swagger\Client\Model\Link',
-        'supported_actions' => '\Swagger\Client\Model\Link[]'
+        'self' => '\authorizenet_rest\Model\Link',
+        'supported_actions' => '\authorizenet_rest\Model\Link[]'
     );
 
     public static function swaggerTypes()
@@ -336,7 +336,7 @@ class InvoiceListInfo implements ArrayAccess
 
     /**
      * Gets self
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getSelf()
     {
@@ -345,7 +345,7 @@ class InvoiceListInfo implements ArrayAccess
 
     /**
      * Sets self
-     * @param \Swagger\Client\Model\Link $self
+     * @param \authorizenet_rest\Model\Link $self
      * @return $this
      */
     public function setSelf($self)
@@ -357,7 +357,7 @@ class InvoiceListInfo implements ArrayAccess
 
     /**
      * Gets supported_actions
-     * @return \Swagger\Client\Model\Link[]
+     * @return \authorizenet_rest\Model\Link[]
      */
     public function getSupportedActions()
     {
@@ -366,7 +366,7 @@ class InvoiceListInfo implements ArrayAccess
 
     /**
      * Sets supported_actions
-     * @param \Swagger\Client\Model\Link[] $supported_actions
+     * @param \authorizenet_rest\Model\Link[] $supported_actions
      * @return $this
      */
     public function setSupportedActions($supported_actions)
@@ -427,9 +427,9 @@ class InvoiceListInfo implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

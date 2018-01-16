@@ -1,4 +1,4 @@
-# Swagger\Client\NotificationsApi
+# authorizenet_rest\NotificationsApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getNotification**
-> \Swagger\Client\Model\GetNotificationResponse getNotification($notifications_id, $authorization)
+> \authorizenet_rest\Model\GetNotificationResponse getNotification($notifications_id, $authorization)
 
 Get a Notification
 
@@ -20,7 +20,7 @@ Retreives a notification history
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\NotificationsApi();
+$api_instance = new authorizenet_rest\Api\NotificationsApi();
 $notifications_id = "notifications_id_example"; // string | ID of notification to return
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetNotificationResponse**](../Model/GetNotificationResponse.md)
+[**\authorizenet_rest\Model\GetNotificationResponse**](../Model/GetNotificationResponse.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNotifications**
-> \Swagger\Client\Model\GetNotificationsResponse getNotifications($authorization, $delivery_status, $from_date, $to_date, $offset, $limit)
+> \authorizenet_rest\Model\GetNotificationsResponse getNotifications($authorization, $delivery_status, $from_date, $to_date, $offset, $limit)
 
 Get Notifications
 
@@ -67,7 +67,7 @@ Retreives notification history
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\NotificationsApi();
+$api_instance = new authorizenet_rest\Api\NotificationsApi();
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 $delivery_status = "delivery_status_example"; // string | Filter by delivery status
 $from_date = "from_date_example"; // string | Only include notifications after date
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetNotificationsResponse**](../Model/GetNotificationsResponse.md)
+[**\authorizenet_rest\Model\GetNotificationsResponse**](../Model/GetNotificationsResponse.md)
 
 ### Authorization
 

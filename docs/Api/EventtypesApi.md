@@ -1,4 +1,4 @@
-# Swagger\Client\EventtypesApi
+# authorizenet_rest\EventtypesApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getEventTypes**
-> \Swagger\Client\Model\EventType[] getEventTypes($authorization)
+> \authorizenet_rest\Model\EventType[] getEventTypes($authorization)
 
 Retrieving Event Types
 
@@ -19,7 +19,7 @@ Returns a list of all Webhooks event types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\EventtypesApi();
+$api_instance = new authorizenet_rest\Api\EventtypesApi();
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\EventType[]**](../Model/EventType.md)
+[**\authorizenet_rest\Model\EventType[]**](../Model/EventType.md)
 
 ### Authorization
 

@@ -1,5 +1,5 @@
 {
-    "name": "AuthorizeNet/authorizenet-rest",
+    "name": "AuthorizeNet/authorizenet_rest",
     "version": "0.0.9",
     "description": "",
     "keywords": [
@@ -28,9 +28,9 @@
         "squizlabs/php_codesniffer": "~2.6"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
+        "psr-4": { "authorizenet_rest\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": { "authorizenet_rest\\" : "test/" }
     }
 }

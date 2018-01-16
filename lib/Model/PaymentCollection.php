@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Model for PaymentCollection
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -66,8 +66,8 @@ class PaymentCollection implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        '_link' => '\Swagger\Client\Model\CollectionLinks',
-        '_embedded' => '\Swagger\Client\Model\PaymentsList',
+        '_link' => '\authorizenet_rest\Model\CollectionLinks',
+        '_embedded' => '\authorizenet_rest\Model\PaymentsList',
         'total_transactions' => 'int'
     );
 
@@ -167,7 +167,7 @@ class PaymentCollection implements ArrayAccess
 
     /**
      * Gets _link
-     * @return \Swagger\Client\Model\CollectionLinks
+     * @return \authorizenet_rest\Model\CollectionLinks
      */
     public function getLink()
     {
@@ -176,7 +176,7 @@ class PaymentCollection implements ArrayAccess
 
     /**
      * Sets _link
-     * @param \Swagger\Client\Model\CollectionLinks $_link
+     * @param \authorizenet_rest\Model\CollectionLinks $_link
      * @return $this
      */
     public function setLink($_link)
@@ -188,7 +188,7 @@ class PaymentCollection implements ArrayAccess
 
     /**
      * Gets _embedded
-     * @return \Swagger\Client\Model\PaymentsList
+     * @return \authorizenet_rest\Model\PaymentsList
      */
     public function getEmbedded()
     {
@@ -197,7 +197,7 @@ class PaymentCollection implements ArrayAccess
 
     /**
      * Sets _embedded
-     * @param \Swagger\Client\Model\PaymentsList $_embedded
+     * @param \authorizenet_rest\Model\PaymentsList $_embedded
      * @return $this
      */
     public function setEmbedded($_embedded)
@@ -279,9 +279,9 @@ class PaymentCollection implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

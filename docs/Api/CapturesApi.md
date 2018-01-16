@@ -1,4 +1,4 @@
-# Swagger\Client\CapturesApi
+# authorizenet_rest\CapturesApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **createACapture**
-> \Swagger\Client\Model\Payment createACapture($payment_id, $body, $authorization)
+> \authorizenet_rest\Model\Payment createACapture($payment_id, $body, $authorization)
 
 
 
@@ -19,9 +19,9 @@ Create A Capture
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CapturesApi();
+$api_instance = new authorizenet_rest\Api\CapturesApi();
 $payment_id = "payment_id_example"; // string | 
-$body = new \Swagger\Client\Model\CaptureRequest(); // \Swagger\Client\Model\CaptureRequest | 
+$body = new \authorizenet_rest\Model\CaptureRequest(); // \authorizenet_rest\Model\CaptureRequest | 
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -38,12 +38,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_id** | **string**|  |
- **body** | [**\Swagger\Client\Model\CaptureRequest**](../Model/CaptureRequest.md)|  |
+ **body** | [**\authorizenet_rest\Model\CaptureRequest**](../Model/CaptureRequest.md)|  |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Payment**](../Model/Payment.md)
+[**\authorizenet_rest\Model\Payment**](../Model/Payment.md)
 
 ### Authorization
 

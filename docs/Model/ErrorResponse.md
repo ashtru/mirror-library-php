@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **reason** | **string** |  | 
 **information_link** | **string** |  | [optional] 
 **correlation_id** | **string** |  | [optional] 
-**details** | [**\Swagger\Client\Model\ErrorDetails**](ErrorDetails.md) |  | [optional] 
+**details** | [**\authorizenet_rest\Model\ErrorDetails**](ErrorDetails.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

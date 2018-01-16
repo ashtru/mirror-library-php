@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Model for FraudInformation
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -66,7 +66,7 @@ class FraudInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'fraud_filter_list' => '\Swagger\Client\Model\FraudFilter[]',
+        'fraud_filter_list' => '\authorizenet_rest\Model\FraudFilter[]',
         'fraud_action' => 'string'
     );
 
@@ -162,7 +162,7 @@ class FraudInformation implements ArrayAccess
 
     /**
      * Gets fraud_filter_list
-     * @return \Swagger\Client\Model\FraudFilter[]
+     * @return \authorizenet_rest\Model\FraudFilter[]
      */
     public function getFraudFilterList()
     {
@@ -171,7 +171,7 @@ class FraudInformation implements ArrayAccess
 
     /**
      * Sets fraud_filter_list
-     * @param \Swagger\Client\Model\FraudFilter[] $fraud_filter_list
+     * @param \authorizenet_rest\Model\FraudFilter[] $fraud_filter_list
      * @return $this
      */
     public function setFraudFilterList($fraud_filter_list)
@@ -253,9 +253,9 @@ class FraudInformation implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

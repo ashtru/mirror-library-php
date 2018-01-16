@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -47,7 +47,7 @@ use \ArrayAccess;
  * InvoicesCollection Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -65,8 +65,8 @@ class InvoicesCollection implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        '_links' => '\Swagger\Client\Model\CollectionLinks',
-        '_embedded' => '\Swagger\Client\Model\InvoiceListInfo[]',
+        '_links' => '\authorizenet_rest\Model\CollectionLinks',
+        '_embedded' => '\authorizenet_rest\Model\InvoiceListInfo[]',
         'total_invoices' => 'int'
     );
 
@@ -166,7 +166,7 @@ class InvoicesCollection implements ArrayAccess
 
     /**
      * Gets _links
-     * @return \Swagger\Client\Model\CollectionLinks
+     * @return \authorizenet_rest\Model\CollectionLinks
      */
     public function getLinks()
     {
@@ -175,7 +175,7 @@ class InvoicesCollection implements ArrayAccess
 
     /**
      * Sets _links
-     * @param \Swagger\Client\Model\CollectionLinks $_links
+     * @param \authorizenet_rest\Model\CollectionLinks $_links
      * @return $this
      */
     public function setLinks($_links)
@@ -187,7 +187,7 @@ class InvoicesCollection implements ArrayAccess
 
     /**
      * Gets _embedded
-     * @return \Swagger\Client\Model\InvoiceListInfo[]
+     * @return \authorizenet_rest\Model\InvoiceListInfo[]
      */
     public function getEmbedded()
     {
@@ -196,7 +196,7 @@ class InvoicesCollection implements ArrayAccess
 
     /**
      * Sets _embedded
-     * @param \Swagger\Client\Model\InvoiceListInfo[] $_embedded
+     * @param \authorizenet_rest\Model\InvoiceListInfo[] $_embedded
      * @return $this
      */
     public function setEmbedded($_embedded)
@@ -278,9 +278,9 @@ class InvoicesCollection implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

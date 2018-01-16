@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Model for RefundRequest
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,14 +67,14 @@ class RefundRequest implements ArrayAccess
       */
     protected static $swaggerTypes = array(
         'amount' => 'string',
-        'order' => '\Swagger\Client\Model\Order',
-        'line_items' => '\Swagger\Client\Model\LineItem[]',
-        'tax' => '\Swagger\Client\Model\ExtendedAmount',
-        'shipping' => '\Swagger\Client\Model\ExtendedAmount',
-        'duty' => '\Swagger\Client\Model\ExtendedAmount',
-        'payment_instrument' => '\Swagger\Client\Model\PaymentInstrument',
-        'bill_to' => '\Swagger\Client\Model\BaseAddress',
-        'ship_to' => '\Swagger\Client\Model\BaseAddress'
+        'order' => '\authorizenet_rest\Model\Order',
+        'line_items' => '\authorizenet_rest\Model\LineItem[]',
+        'tax' => '\authorizenet_rest\Model\ExtendedAmount',
+        'shipping' => '\authorizenet_rest\Model\ExtendedAmount',
+        'duty' => '\authorizenet_rest\Model\ExtendedAmount',
+        'payment_instrument' => '\authorizenet_rest\Model\PaymentInstrument',
+        'bill_to' => '\authorizenet_rest\Model\BaseAddress',
+        'ship_to' => '\authorizenet_rest\Model\BaseAddress'
     );
 
     public static function swaggerTypes()
@@ -230,7 +230,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets order
-     * @return \Swagger\Client\Model\Order
+     * @return \authorizenet_rest\Model\Order
      */
     public function getOrder()
     {
@@ -239,7 +239,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets order
-     * @param \Swagger\Client\Model\Order $order
+     * @param \authorizenet_rest\Model\Order $order
      * @return $this
      */
     public function setOrder($order)
@@ -251,7 +251,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets line_items
-     * @return \Swagger\Client\Model\LineItem[]
+     * @return \authorizenet_rest\Model\LineItem[]
      */
     public function getLineItems()
     {
@@ -260,7 +260,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets line_items
-     * @param \Swagger\Client\Model\LineItem[] $line_items
+     * @param \authorizenet_rest\Model\LineItem[] $line_items
      * @return $this
      */
     public function setLineItems($line_items)
@@ -272,7 +272,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets tax
-     * @return \Swagger\Client\Model\ExtendedAmount
+     * @return \authorizenet_rest\Model\ExtendedAmount
      */
     public function getTax()
     {
@@ -281,7 +281,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets tax
-     * @param \Swagger\Client\Model\ExtendedAmount $tax
+     * @param \authorizenet_rest\Model\ExtendedAmount $tax
      * @return $this
      */
     public function setTax($tax)
@@ -293,7 +293,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets shipping
-     * @return \Swagger\Client\Model\ExtendedAmount
+     * @return \authorizenet_rest\Model\ExtendedAmount
      */
     public function getShipping()
     {
@@ -302,7 +302,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets shipping
-     * @param \Swagger\Client\Model\ExtendedAmount $shipping
+     * @param \authorizenet_rest\Model\ExtendedAmount $shipping
      * @return $this
      */
     public function setShipping($shipping)
@@ -314,7 +314,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets duty
-     * @return \Swagger\Client\Model\ExtendedAmount
+     * @return \authorizenet_rest\Model\ExtendedAmount
      */
     public function getDuty()
     {
@@ -323,7 +323,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets duty
-     * @param \Swagger\Client\Model\ExtendedAmount $duty
+     * @param \authorizenet_rest\Model\ExtendedAmount $duty
      * @return $this
      */
     public function setDuty($duty)
@@ -335,7 +335,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets payment_instrument
-     * @return \Swagger\Client\Model\PaymentInstrument
+     * @return \authorizenet_rest\Model\PaymentInstrument
      */
     public function getPaymentInstrument()
     {
@@ -344,7 +344,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets payment_instrument
-     * @param \Swagger\Client\Model\PaymentInstrument $payment_instrument
+     * @param \authorizenet_rest\Model\PaymentInstrument $payment_instrument
      * @return $this
      */
     public function setPaymentInstrument($payment_instrument)
@@ -356,7 +356,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets bill_to
-     * @return \Swagger\Client\Model\BaseAddress
+     * @return \authorizenet_rest\Model\BaseAddress
      */
     public function getBillTo()
     {
@@ -365,7 +365,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets bill_to
-     * @param \Swagger\Client\Model\BaseAddress $bill_to
+     * @param \authorizenet_rest\Model\BaseAddress $bill_to
      * @return $this
      */
     public function setBillTo($bill_to)
@@ -377,7 +377,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Gets ship_to
-     * @return \Swagger\Client\Model\BaseAddress
+     * @return \authorizenet_rest\Model\BaseAddress
      */
     public function getShipTo()
     {
@@ -386,7 +386,7 @@ class RefundRequest implements ArrayAccess
 
     /**
      * Sets ship_to
-     * @param \Swagger\Client\Model\BaseAddress $ship_to
+     * @param \authorizenet_rest\Model\BaseAddress $ship_to
      * @return $this
      */
     public function setShipTo($ship_to)
@@ -447,9 +447,9 @@ class RefundRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

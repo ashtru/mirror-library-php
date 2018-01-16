@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -47,7 +47,7 @@ use \ArrayAccess;
  * Invoice Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,21 +67,21 @@ class Invoice implements ArrayAccess
     protected static $swaggerTypes = array(
         'invoice_number' => 'string',
         'description' => 'string',
-        'customer' => '\Swagger\Client\Model\Customer',
+        'customer' => '\authorizenet_rest\Model\Customer',
         'payer_name' => 'string',
         'payment_due_date' => 'string',
         'sub_amount' => 'float',
         'discount_percent' => 'float',
         'discount_amount' => 'float',
         'total_amount' => 'float',
-        'line_items' => '\Swagger\Client\Model\LineItem[]',
-        'tax' => '\Swagger\Client\Model\Tax',
+        'line_items' => '\authorizenet_rest\Model\LineItem[]',
+        'tax' => '\authorizenet_rest\Model\Tax',
         'status' => 'string',
         'created_date' => 'string',
         'modified_date' => 'string',
         'transid' => 'string',
-        'self' => '\Swagger\Client\Model\Link',
-        'supported_actions' => '\Swagger\Client\Model\Link[]'
+        'self' => '\authorizenet_rest\Model\Link',
+        'supported_actions' => '\authorizenet_rest\Model\Link[]'
     );
 
     public static function swaggerTypes()
@@ -278,7 +278,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \Swagger\Client\Model\Customer
+     * @return \authorizenet_rest\Model\Customer
      */
     public function getCustomer()
     {
@@ -287,7 +287,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \Swagger\Client\Model\Customer $customer
+     * @param \authorizenet_rest\Model\Customer $customer
      * @return $this
      */
     public function setCustomer($customer)
@@ -425,7 +425,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets line_items
-     * @return \Swagger\Client\Model\LineItem[]
+     * @return \authorizenet_rest\Model\LineItem[]
      */
     public function getLineItems()
     {
@@ -434,7 +434,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets line_items
-     * @param \Swagger\Client\Model\LineItem[] $line_items
+     * @param \authorizenet_rest\Model\LineItem[] $line_items
      * @return $this
      */
     public function setLineItems($line_items)
@@ -446,7 +446,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets tax
-     * @return \Swagger\Client\Model\Tax
+     * @return \authorizenet_rest\Model\Tax
      */
     public function getTax()
     {
@@ -455,7 +455,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets tax
-     * @param \Swagger\Client\Model\Tax $tax
+     * @param \authorizenet_rest\Model\Tax $tax
      * @return $this
      */
     public function setTax($tax)
@@ -551,7 +551,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets self
-     * @return \Swagger\Client\Model\Link
+     * @return \authorizenet_rest\Model\Link
      */
     public function getSelf()
     {
@@ -560,7 +560,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets self
-     * @param \Swagger\Client\Model\Link $self
+     * @param \authorizenet_rest\Model\Link $self
      * @return $this
      */
     public function setSelf($self)
@@ -572,7 +572,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets supported_actions
-     * @return \Swagger\Client\Model\Link[]
+     * @return \authorizenet_rest\Model\Link[]
      */
     public function getSupportedActions()
     {
@@ -581,7 +581,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets supported_actions
-     * @param \Swagger\Client\Model\Link[] $supported_actions
+     * @param \authorizenet_rest\Model\Link[] $supported_actions
      * @return $this
      */
     public function setSupportedActions($supported_actions)
@@ -642,9 +642,9 @@ class Invoice implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

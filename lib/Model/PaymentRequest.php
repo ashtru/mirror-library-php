@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace authorizenet_rest\Model;
 
 use \ArrayAccess;
 
@@ -48,7 +48,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Model for PaymentRequest
- * @package     Swagger\Client
+ * @package     authorizenet_rest
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,17 +67,17 @@ class PaymentRequest implements ArrayAccess
       */
     protected static $swaggerTypes = array(
         'capture' => 'bool',
-        'amount_detail' => '\Swagger\Client\Model\AmountDetail',
-        'solution' => '\Swagger\Client\Model\Solution',
-        'payment_instrument' => '\Swagger\Client\Model\PaymentInstrument',
-        'bill_to' => '\Swagger\Client\Model\BaseAddress',
-        'ship_to' => '\Swagger\Client\Model\BaseAddress',
+        'amount_detail' => '\authorizenet_rest\Model\AmountDetail',
+        'solution' => '\authorizenet_rest\Model\Solution',
+        'payment_instrument' => '\authorizenet_rest\Model\PaymentInstrument',
+        'bill_to' => '\authorizenet_rest\Model\BaseAddress',
+        'ship_to' => '\authorizenet_rest\Model\BaseAddress',
         'customer_ip' => 'string',
-        'order' => '\Swagger\Client\Model\Order',
-        'tax' => '\Swagger\Client\Model\ExtendedAmount',
-        'duty' => '\Swagger\Client\Model\ExtendedAmount',
-        'shipping' => '\Swagger\Client\Model\ExtendedAmount',
-        'line_items' => '\Swagger\Client\Model\LineItem[]'
+        'order' => '\authorizenet_rest\Model\Order',
+        'tax' => '\authorizenet_rest\Model\ExtendedAmount',
+        'duty' => '\authorizenet_rest\Model\ExtendedAmount',
+        'shipping' => '\authorizenet_rest\Model\ExtendedAmount',
+        'line_items' => '\authorizenet_rest\Model\LineItem[]'
     );
 
     public static function swaggerTypes()
@@ -245,7 +245,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets amount_detail
-     * @return \Swagger\Client\Model\AmountDetail
+     * @return \authorizenet_rest\Model\AmountDetail
      */
     public function getAmountDetail()
     {
@@ -254,7 +254,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets amount_detail
-     * @param \Swagger\Client\Model\AmountDetail $amount_detail
+     * @param \authorizenet_rest\Model\AmountDetail $amount_detail
      * @return $this
      */
     public function setAmountDetail($amount_detail)
@@ -266,7 +266,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets solution
-     * @return \Swagger\Client\Model\Solution
+     * @return \authorizenet_rest\Model\Solution
      */
     public function getSolution()
     {
@@ -275,7 +275,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets solution
-     * @param \Swagger\Client\Model\Solution $solution
+     * @param \authorizenet_rest\Model\Solution $solution
      * @return $this
      */
     public function setSolution($solution)
@@ -287,7 +287,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets payment_instrument
-     * @return \Swagger\Client\Model\PaymentInstrument
+     * @return \authorizenet_rest\Model\PaymentInstrument
      */
     public function getPaymentInstrument()
     {
@@ -296,7 +296,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets payment_instrument
-     * @param \Swagger\Client\Model\PaymentInstrument $payment_instrument
+     * @param \authorizenet_rest\Model\PaymentInstrument $payment_instrument
      * @return $this
      */
     public function setPaymentInstrument($payment_instrument)
@@ -308,7 +308,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets bill_to
-     * @return \Swagger\Client\Model\BaseAddress
+     * @return \authorizenet_rest\Model\BaseAddress
      */
     public function getBillTo()
     {
@@ -317,7 +317,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets bill_to
-     * @param \Swagger\Client\Model\BaseAddress $bill_to
+     * @param \authorizenet_rest\Model\BaseAddress $bill_to
      * @return $this
      */
     public function setBillTo($bill_to)
@@ -329,7 +329,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets ship_to
-     * @return \Swagger\Client\Model\BaseAddress
+     * @return \authorizenet_rest\Model\BaseAddress
      */
     public function getShipTo()
     {
@@ -338,7 +338,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets ship_to
-     * @param \Swagger\Client\Model\BaseAddress $ship_to
+     * @param \authorizenet_rest\Model\BaseAddress $ship_to
      * @return $this
      */
     public function setShipTo($ship_to)
@@ -371,7 +371,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets order
-     * @return \Swagger\Client\Model\Order
+     * @return \authorizenet_rest\Model\Order
      */
     public function getOrder()
     {
@@ -380,7 +380,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets order
-     * @param \Swagger\Client\Model\Order $order
+     * @param \authorizenet_rest\Model\Order $order
      * @return $this
      */
     public function setOrder($order)
@@ -392,7 +392,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets tax
-     * @return \Swagger\Client\Model\ExtendedAmount
+     * @return \authorizenet_rest\Model\ExtendedAmount
      */
     public function getTax()
     {
@@ -401,7 +401,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets tax
-     * @param \Swagger\Client\Model\ExtendedAmount $tax
+     * @param \authorizenet_rest\Model\ExtendedAmount $tax
      * @return $this
      */
     public function setTax($tax)
@@ -413,7 +413,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets duty
-     * @return \Swagger\Client\Model\ExtendedAmount
+     * @return \authorizenet_rest\Model\ExtendedAmount
      */
     public function getDuty()
     {
@@ -422,7 +422,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets duty
-     * @param \Swagger\Client\Model\ExtendedAmount $duty
+     * @param \authorizenet_rest\Model\ExtendedAmount $duty
      * @return $this
      */
     public function setDuty($duty)
@@ -434,7 +434,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets shipping
-     * @return \Swagger\Client\Model\ExtendedAmount
+     * @return \authorizenet_rest\Model\ExtendedAmount
      */
     public function getShipping()
     {
@@ -443,7 +443,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets shipping
-     * @param \Swagger\Client\Model\ExtendedAmount $shipping
+     * @param \authorizenet_rest\Model\ExtendedAmount $shipping
      * @return $this
      */
     public function setShipping($shipping)
@@ -455,7 +455,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Gets line_items
-     * @return \Swagger\Client\Model\LineItem[]
+     * @return \authorizenet_rest\Model\LineItem[]
      */
     public function getLineItems()
     {
@@ -464,7 +464,7 @@ class PaymentRequest implements ArrayAccess
 
     /**
      * Sets line_items
-     * @param \Swagger\Client\Model\LineItem[] $line_items
+     * @param \authorizenet_rest\Model\LineItem[] $line_items
      * @return $this
      */
     public function setLineItems($line_items)
@@ -525,9 +525,9 @@ class PaymentRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\authorizenet_rest\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -1,4 +1,4 @@
-# Swagger\Client\CustomersApi
+# authorizenet_rest\CustomersApi
 
 All URIs are relative to *https://api.authorize.net/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createCustomer**
-> \Swagger\Client\Model\Customer createCustomer($create_customer, $authorization)
+> \authorizenet_rest\Model\Customer createCustomer($create_customer, $authorization)
 
 Create A Customer
 
@@ -23,8 +23,8 @@ Create A Customer
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CustomersApi();
-$create_customer = new \Swagger\Client\Model\CreateCustomer(); // \Swagger\Client\Model\CreateCustomer | the \"CreateCustomer\" model
+$api_instance = new authorizenet_rest\Api\CustomersApi();
+$create_customer = new \authorizenet_rest\Model\CreateCustomer(); // \authorizenet_rest\Model\CreateCustomer | the \"CreateCustomer\" model
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -40,12 +40,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_customer** | [**\Swagger\Client\Model\CreateCustomer**](../Model/CreateCustomer.md)| the \&quot;CreateCustomer\&quot; model |
+ **create_customer** | [**\authorizenet_rest\Model\CreateCustomer**](../Model/CreateCustomer.md)| the \&quot;CreateCustomer\&quot; model |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Customer**](../Model/Customer.md)
+[**\authorizenet_rest\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Deletes a Customer
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CustomersApi();
+$api_instance = new authorizenet_rest\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | Customer ID
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -105,7 +105,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllCustomers**
-> \Swagger\Client\Model\CustomerCollection getAllCustomers($authorization)
+> \authorizenet_rest\Model\CustomerCollection getAllCustomers($authorization)
 
 Get All Customers
 
@@ -116,7 +116,7 @@ Get All Customers
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CustomersApi();
+$api_instance = new authorizenet_rest\Api\CustomersApi();
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\CustomerCollection**](../Model/CustomerCollection.md)
+[**\authorizenet_rest\Model\CustomerCollection**](../Model/CustomerCollection.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomer**
-> \Swagger\Client\Model\Customer getCustomer($customer_id, $authorization)
+> \authorizenet_rest\Model\Customer getCustomer($customer_id, $authorization)
 
 Get A Customer
 
@@ -161,7 +161,7 @@ Get A Customer
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CustomersApi();
+$api_instance = new authorizenet_rest\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | Customer ID
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Customer**](../Model/Customer.md)
+[**\authorizenet_rest\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomer**
-> \Swagger\Client\Model\Customer updateCustomer($customer_id, $create_customer, $authorization)
+> \authorizenet_rest\Model\Customer updateCustomer($customer_id, $create_customer, $authorization)
 
 Update A Customer
 
@@ -208,9 +208,9 @@ Update A Customer
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CustomersApi();
+$api_instance = new authorizenet_rest\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | Customer ID
-$create_customer = new \Swagger\Client\Model\CreateCustomer(); // \Swagger\Client\Model\CreateCustomer | the \"UpdateCustomer\" model
+$create_customer = new \authorizenet_rest\Model\CreateCustomer(); // \authorizenet_rest\Model\CreateCustomer | the \"UpdateCustomer\" model
 $authorization = "authorization_example"; // string | The value to provide in the Authorization header of ANET API request
 
 try {
@@ -227,12 +227,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **string**| Customer ID |
- **create_customer** | [**\Swagger\Client\Model\CreateCustomer**](../Model/CreateCustomer.md)| the \&quot;UpdateCustomer\&quot; model |
+ **create_customer** | [**\authorizenet_rest\Model\CreateCustomer**](../Model/CreateCustomer.md)| the \&quot;UpdateCustomer\&quot; model |
  **authorization** | **string**| The value to provide in the Authorization header of ANET API request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Customer**](../Model/Customer.md)
+[**\authorizenet_rest\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 

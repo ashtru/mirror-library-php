@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace authorizenet_rest\Api;
 
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\ObjectSerializer;
+use \authorizenet_rest\Configuration;
+use \authorizenet_rest\ApiClient;
+use \authorizenet_rest\ApiException;
+use \authorizenet_rest\ObjectSerializer;
 
 /**
  * InvoicesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  authorizenet_rest
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -60,16 +60,16 @@ class InvoicesApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \authorizenet_rest\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \authorizenet_rest\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\authorizenet_rest\ApiClient $apiClient = null)
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
@@ -82,7 +82,7 @@ class InvoicesApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \authorizenet_rest\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -92,11 +92,11 @@ class InvoicesApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \authorizenet_rest\ApiClient $apiClient set the API client
      *
      * @return InvoicesApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\authorizenet_rest\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -107,11 +107,11 @@ class InvoicesApi
      *
      * Create Invoice API.
      *
-     * @param \Swagger\Client\Model\CreateInvoice $create_invoice The \&quot;create invoice \&quot; model (required)
+     * @param \authorizenet_rest\Model\CreateInvoice $create_invoice The \&quot;create invoice \&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Invoice
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Invoice
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createInvoice($create_invoice, $authorization = null)
     {
@@ -125,11 +125,11 @@ class InvoicesApi
      *
      * Create Invoice API.
      *
-     * @param \Swagger\Client\Model\CreateInvoice $create_invoice The \&quot;create invoice \&quot; model (required)
+     * @param \authorizenet_rest\Model\CreateInvoice $create_invoice The \&quot;create invoice \&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function createInvoiceWithHttpInfo($create_invoice, $authorization = null)
     {
@@ -181,26 +181,26 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Invoice'
+                '\authorizenet_rest\Model\Invoice'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Invoice', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Invoice', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Invoice', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Invoice', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -217,8 +217,8 @@ class InvoicesApi
      * @param int $limit Number of items to be returned (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\InvoicesCollection
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\InvoicesCollection
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getAllInvoices($offset, $limit, $authorization = null)
     {
@@ -236,8 +236,8 @@ class InvoicesApi
      * @param int $limit Number of items to be returned (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\InvoicesCollection, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\InvoicesCollection, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getAllInvoicesWithHttpInfo($offset, $limit, $authorization = null)
     {
@@ -296,22 +296,22 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InvoicesCollection'
+                '\authorizenet_rest\Model\InvoicesCollection'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InvoicesCollection', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\InvoicesCollection', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InvoicesCollection', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\InvoicesCollection', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -327,8 +327,8 @@ class InvoicesApi
      * @param string $invoice_number Invoice ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Invoice
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Invoice
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getInvoice($invoice_number, $authorization = null)
     {
@@ -345,8 +345,8 @@ class InvoicesApi
      * @param string $invoice_number Invoice ID (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function getInvoiceWithHttpInfo($invoice_number, $authorization = null)
     {
@@ -401,14 +401,14 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Invoice'
+                '\authorizenet_rest\Model\Invoice'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Invoice', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Invoice', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -422,11 +422,11 @@ class InvoicesApi
      * Perform an action on Invoice.
      *
      * @param string $invoice_number Invoice ID (required)
-     * @param \Swagger\Client\Model\InvoiceAction $invoice_action Perform an action on invoice (required)
+     * @param \authorizenet_rest\Model\InvoiceAction $invoice_action Perform an action on invoice (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Invoice
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Invoice
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function performActions($invoice_number, $invoice_action, $authorization = null)
     {
@@ -441,11 +441,11 @@ class InvoicesApi
      * Perform an action on Invoice.
      *
      * @param string $invoice_number Invoice ID (required)
-     * @param \Swagger\Client\Model\InvoiceAction $invoice_action Perform an action on invoice (required)
+     * @param \authorizenet_rest\Model\InvoiceAction $invoice_action Perform an action on invoice (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function performActionsWithHttpInfo($invoice_number, $invoice_action, $authorization = null)
     {
@@ -509,14 +509,14 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Invoice'
+                '\authorizenet_rest\Model\Invoice'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Invoice', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Invoice', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -530,11 +530,11 @@ class InvoicesApi
      * Update Invoice API.
      *
      * @param string $invoice_number Invoice ID (required)
-     * @param \Swagger\Client\Model\UpdateInvoice $update_invoice The \&quot;update invoice \&quot; model (required)
+     * @param \authorizenet_rest\Model\UpdateInvoice $update_invoice The \&quot;update invoice \&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return \Swagger\Client\Model\Invoice
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \authorizenet_rest\Model\Invoice
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function updateInvoice($invoice_number, $update_invoice, $authorization = null)
     {
@@ -549,11 +549,11 @@ class InvoicesApi
      * Update Invoice API.
      *
      * @param string $invoice_number Invoice ID (required)
-     * @param \Swagger\Client\Model\UpdateInvoice $update_invoice The \&quot;update invoice \&quot; model (required)
+     * @param \authorizenet_rest\Model\UpdateInvoice $update_invoice The \&quot;update invoice \&quot; model (required)
      * @param string $authorization The value to provide in the Authorization header of ANET API request (optional)
      *
-     * @return Array of \Swagger\Client\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return Array of \authorizenet_rest\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @throws \authorizenet_rest\ApiException on non-2xx response
      */
     public function updateInvoiceWithHttpInfo($invoice_number, $update_invoice, $authorization = null)
     {
@@ -617,22 +617,22 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Invoice'
+                '\authorizenet_rest\Model\Invoice'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\authorizenet_rest\Model\Invoice', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Invoice', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\Invoice', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\authorizenet_rest\Model\ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
