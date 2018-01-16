@@ -193,12 +193,18 @@ class ApiClient
         }
         curl_setopt($curl, CURLOPT_URL, $url);
 
+        $maskedFields = array("cardNumber"=>"XXXXX","expirationDate"=>"XXXX","cardCode"=>"XXXX","accountNumber"=>"XXXXX","nameOnAccount"=>"XXXX","transactionKey"=>"XXXX","firstName"=>"XXXXX","lastName"=>"XXXX","dateOfBirth"=>"XXXX","phoneNumber"=>"XXXXX","email"=>"XXXX","phone"=>"XXXX","taxId"=>"XXXXX","customerIp"=>"XXXX");
+
         // Set user agent
         curl_setopt($curl, CURLOPT_USERAGENT, $this->config->getUserAgent());
 
         // debugging for curl
         if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
+            $maskedMessage = json_decode($postData, true);
+            $maskedMessage = $this->maskSensitiveFields($maskedMessage, $maskedFields);
+            $maskedMessage = json_encode(\{{invokerPackage}}\ObjectSerializer::sanitizeForSerialization($maskedMessage), JSON_UNESCAPED_SLASHES);
+
+            error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($maskedMessage, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
 
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
             curl_setopt($curl, CURLOPT_STDERR, fopen($this->config->getDebugFile(), 'a'));
@@ -218,7 +224,11 @@ class ApiClient
 
         // debug HTTP response body
         if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
+            $maskedResponseMessage = json_decode($http_body,true);
+            $maskedResponseMessage = $this->maskSensitiveFields($maskedResponseMessage, $maskedFields);
+            $maskedResponseMessage = json_encode(\{{invokerPackage}}\ObjectSerializer::sanitizeForSerialization($maskedResponseMessage), JSON_UNESCAPED_SLASHES);
+
+            error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($maskedResponseMessage, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
         }
 
         // Handle the response
@@ -323,5 +333,23 @@ class ApiClient
         }
 
         return $headers;
+    }
+
+    private function maskSensitiveFields($responceArr, $maskedFields)
+    { 
+        foreach ($responceArr as $k => $v) 
+        {
+            if(is_array($v)) {
+                $responceArr[$k] = $this->maskSensitiveFields($v, $maskedFields);
+            } 
+            else 
+            {
+                if(array_key_exists($k, $maskedFields)) 
+                {
+                    $responceArr[$k] = $maskedFields[$k];
+                }
+            }
+        }
+        return $responceArr;
     }
 }
