@@ -188,6 +188,10 @@ class ApiClient
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
         }
 
+        if ($this->config->getCurlProxyHost()) {
+            curl_setopt($curl, CURLOPT_PROXY, $this->config->getCurlProxyHost());
+        }
+
         if (!empty($queryParams)) {
             $url = ($url . '?' . http_build_query($queryParams));
         }
