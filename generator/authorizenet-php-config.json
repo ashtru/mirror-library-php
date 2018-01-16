@@ -1,0 +1,7 @@
+{
+	"packagePath" : "authorizenet",
+	"composerVendorName" : "AuthorizeNet",
+	"composerProjectName" : "authorizenet-rest",
+	"artifactVersion" : "0.0.9",
+	"gitRepoId" : "authorizenet"
+}

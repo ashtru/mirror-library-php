@@ -1,0 +1,13 @@
+# Customer
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** | Unique identifier for customer. | [optional] 
+**description** | **string** |  | [optional] 
+**identifier** | [**\Swagger\Client\Model\Identifier**](Identifier.md) |  | [optional] 
+**_links** | [**\Swagger\Client\Model\CustomerLinks**](CustomerLinks.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

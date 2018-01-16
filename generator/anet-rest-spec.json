@@ -1,0 +1,3261 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Authorize.net REST API",
+        "description": "Authorize.net REST API",
+        "version": "1.0",
+        "contact": {
+            "name": "developer@authorize.net"
+        }
+    },
+    "host": "api.authorize.net",
+    "basePath": "/v1",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/customers": {
+            "post": {
+                "tags": [
+                    "customers"
+                ],
+                "summary": "Create A Customer",
+                "description": "Create A Customer",
+                "operationId": "createCustomer",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "createCustomer",
+                        "in": "body",
+                        "description": "the \"CreateCustomer\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateCustomer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                },
+                "security": []
+            },
+            "get": {
+                "tags": [
+                    "customers"
+                ],
+                "summary": "Get All Customers",
+                "description": "Get All Customers",
+                "operationId": "getAllCustomers",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CustomerCollection"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/customers/{customerId}/addresses": {
+            "post": {
+                "tags": [
+                    "addresses"
+                ],
+                "summary": "Create A Customer Address",
+                "description": "Create A Customer Address",
+                "operationId": "createCustomerAddress",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "createCustomerAddress",
+                        "in": "body",
+                        "description": "the \"CreateCustomerAddress\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateCustomerAddress"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Address"
+                        }
+                    },
+                    "404": {
+                        "description": "Address not created",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            },
+            "get": {
+                "tags": [
+                    "addresses"
+                ],
+                "summary": "Get All Customer Addresses",
+                "description": "Get All Customer Addresses",
+                "operationId": "getAllCustomerAddresses",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/AddressCollection"
+                        }
+                    }
+                }
+            }
+        },
+        "/customers/{customerId}/paymentmethods": {
+            "post": {
+                "tags": [
+                    "paymentmethods"
+                ],
+                "summary": "Create A Payment Method",
+                "description": "Create A Payment Method",
+                "operationId": "createPaymentMethod",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "CreatePaymentMethod",
+                        "in": "body",
+                        "description": "the \"CreatePaymentMethod\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreatePaymentMethod"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentMethod"
+                        }
+                    },
+                    "404": {
+                        "description": "PaymentMethod not created",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            },
+            "get": {
+                "tags": [
+                    "paymentmethods"
+                ],
+                "summary": "Get Customer Payment Methods",
+                "description": "Get Customer Payment Methods",
+                "operationId": "getCustomerPaymentMethods",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentMethodCollection"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/customers/{customerId}": {
+            "get": {
+                "tags": [
+                    "customers"
+                ],
+                "summary": "Get A Customer",
+                "description": "Get A Customer",
+                "operationId": "getCustomer",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "customers"
+                ],
+                "summary": "Delete customer",
+                "operationId": "DeleteCustomer",
+                "description": "Deletes a Customer",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": []
+            },
+            "put": {
+                "tags": [
+                    "customers"
+                ],
+                "summary": "Update A Customer",
+                "description": "Update A Customer",
+                "operationId": "UpdateCustomer",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "CreateCustomer",
+                        "in": "body",
+                        "description": "the \"UpdateCustomer\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateCustomer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    },
+                    "404": {
+                        "description": "Customer not updated",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/customers/{customerId}/addresses/{addressId}": {
+            "get": {
+                "tags": [
+                    "addresses"
+                ],
+                "summary": "Get A Customer Address",
+                "description": "Get A Customer Address",
+                "operationId": "getCustomerAddress",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "addressId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Address ID",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Address"
+                        }
+                    }
+                },
+                "security": []
+            },
+            "delete": {
+                "tags": [
+                    "addresses"
+                ],
+                "summary": "Delete Address",
+                "operationId": "DeleteAddress",
+                "description": "Deletes a Address",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "addressId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Address ID",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": []
+            },
+            "put": {
+                "tags": [
+                    "addresses"
+                ],
+                "summary": "Update A Customer Address",
+                "description": "Update A Customer Address",
+                "operationId": "updateCustomerAddress",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "addressId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "address  ID",
+                        "required": true
+                    },
+                    {
+                        "name": "createCustomerAddress",
+                        "in": "body",
+                        "description": "the \"UpdateCustomerAddress\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateCustomerAddress"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Address"
+                        }
+                    },
+                    "404": {
+                        "description": "Address not updated",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/customers/{customerId}/paymentmethods/{paymentMethodId}": {
+            "get": {
+                "tags": [
+                    "paymentmethods"
+                ],
+                "summary": "Get Customer Payment Method",
+                "description": "Get Customer Payment Method",
+                "operationId": "getCustomerPaymentMethod",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "paymentMethodId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "paymentMethod ID",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentMethod"
+                        }
+                    }
+                },
+                "security": []
+            },
+            "delete": {
+                "tags": [
+                    "paymentmethods"
+                ],
+                "summary": "Delete paymentmethods",
+                "operationId": "DeletePaymentmethod",
+                "description": "Deletes a paymentmethods",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "paymentMethodId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "paymentMethod ID",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": []
+            },
+            "put": {
+                "tags": [
+                    "paymentmethods"
+                ],
+                "summary": "Update A paymentMethod",
+                "description": "Update A paymentMethod",
+                "operationId": "UpdatePaymentMethod",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Customer ID",
+                        "required": true
+                    },
+                    {
+                        "name": "paymentMethodId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "paymentMethod ID",
+                        "required": true
+                    },
+                    {
+                        "name": "createPaymentMethod",
+                        "in": "body",
+                        "description": "the \"UpdateAPaymentMethod\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreatePaymentMethod"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentMethod"
+                        }
+                    },
+                    "404": {
+                        "description": "Payment Method not updated",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/payments/{paymentId}": {
+            "get": {
+                "tags": [
+                    "payments"
+                ],
+                "description": "Get A Payment",
+                "operationId": "Get a Payment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "paymentId",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Payment"
+                        }
+                    },
+                    "404": {
+                        "description": "Payment Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/forcedcaptures": {
+            "post": {
+                "tags": [
+                    "forcedCaptures"
+                ],
+                "description": "Create A Forced Capture",
+                "operationId": "Create A Forced Capture",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "x-is-map": false,
+                        "schema": {
+                            "$ref": "#/definitions/ForcedCaptureRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Payment"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/payments/{paymentId}/refunds": {
+            "post": {
+                "tags": [
+                    "refunds"
+                ],
+                "description": "Create Refund Payment",
+                "operationId": "Create_Refund a Payment_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "paymentId",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "description": ""
+                    },
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "x-is-map": false,
+                        "schema": {
+                            "$ref": "#/definitions/RefundRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Payment"
+                        }
+                    },
+                    "404": {
+                        "description": "Payment Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/payments": {
+            "get": {
+                "tags": [
+                    "payments"
+                ],
+                "description": "Get all Payments",
+                "operationId": "Get all Payments_",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentCollection"
+                        }
+                    }
+                },
+                "security": []
+            },
+            "post": {
+                "tags": [
+                    "payments"
+                ],
+                "description": "Create A Payment",
+                "operationId": "Create A Payment",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "PaymentRequest",
+                        "in": "body",
+                        "description": "charge credit card model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PaymentRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Payment"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/credits": {
+            "post": {
+                "tags": [
+                    "credits"
+                ],
+                "description": "Create A Credit",
+                "operationId": "Create A Credit",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "x-is-map": false,
+                        "schema": {
+                            "$ref": "#/definitions/CreditRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Payment"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/payments/{paymentId}/captures": {
+            "post": {
+                "tags": [
+                    "captures"
+                ],
+                "description": "Create A Capture",
+                "operationId": "Create A Capture",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "paymentId",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "description": ""
+                    },
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "x-is-map": false,
+                        "schema": {
+                            "$ref": "#/definitions/CaptureRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Payment"
+                        }
+                    },
+                    "404": {
+                        "description": "Payment Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/eventtypes": {
+            "parameters": [
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "type": "string",
+                    "required": true,
+                    "description": "The value to provide in the Authorization header of ANET API request"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "eventtypes"
+                ],
+                "summary": "Retrieving Event Types",
+                "description": "Returns a list of all Webhooks event types",
+                "operationId": "getEventTypes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/EventType"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/webhooks": {
+            "parameters": [
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "type": "string",
+                    "required": false,
+                    "description": "The value to provide in the Authorization header of ANET API request"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "webhooks"
+                ],
+                "summary": "List My Webhooks",
+                "description": "Retrieve details of existing Webhooks",
+                "operationId": "getWebhooks",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GetWebhookResponse"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "webhooks"
+                ],
+                "summary": "Create A Webhook",
+                "description": "Enroll in one or more particular type of event notification",
+                "operationId": "createWebhook",
+                "parameters": [
+                    {
+                        "name": "createWebhookBody",
+                        "in": "body",
+                        "description": "the \"CreateWebhookBody\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateWebhookBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GetWebhookResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid/Missing Data or Limit Reached",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/webhooks/{webhookId}": {
+            "parameters": [
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "type": "string",
+                    "required": false,
+                    "description": "The value to provide in the Authorization header of ANET API request"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "webhooks"
+                ],
+                "summary": "Get A Webhook",
+                "description": "Retrieve details of an existing Webhook",
+                "operationId": "getWebhook",
+                "parameters": [
+                    {
+                        "name": "webhookId",
+                        "in": "path",
+                        "description": "ID of webhook to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GetWebhookResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "webhooks"
+                ],
+                "summary": "Update A Webhook",
+                "description": "Update an existing Webhook",
+                "operationId": "updateWebhook",
+                "parameters": [
+                    {
+                        "name": "webhookId",
+                        "in": "path",
+                        "description": "ID of webhook to return",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "updateWebhookBody",
+                        "in": "body",
+                        "description": "the \"CreateWebhookBody\" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateWebhookBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GetWebhookResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid/Missing Data or Limit Reached",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "webhooks"
+                ],
+                "summary": "Delete A Webhook",
+                "description": "Delete an existing Webhook",
+                "operationId": "deleteWebhook",
+                "parameters": [
+                    {
+                        "name": "webhookId",
+                        "in": "path",
+                        "description": "ID of webhook to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Invalid Data ",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/webhooks/{webhookId}/pings": {
+            "parameters": [
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "type": "string",
+                    "required": false,
+                    "description": "The value to provide in the Authorization header of ANET API request"
+                }
+            ],
+            "post": {
+                "tags": [
+                    "webhooks"
+                ],
+                "summary": "Pings A Webhook",
+                "description": "A test event is sent to the Webhook (in an inactive state) endpoint",
+                "operationId": "pingsWebhook",
+                "parameters": [
+                    {
+                        "name": "webhookId",
+                        "in": "path",
+                        "description": "ID of webhook to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/notifications": {
+            "parameters": [
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "type": "string",
+                    "required": false,
+                    "description": "The value to provide in the Authorization header of ANET API request"
+                },
+                {
+                    "name": "deliveryStatus",
+                    "in": "query",
+                    "type": "string",
+                    "description": "Filter by delivery status"
+                },
+                {
+                    "name": "from_date",
+                    "in": "query",
+                    "type": "string",
+                    "description": "Only include notifications after date"
+                },
+                {
+                    "name": "to_date",
+                    "in": "query",
+                    "type": "string",
+                    "description": "Only include notifications before date"
+                },
+                {
+                    "name": "offset",
+                    "in": "query",
+                    "type": "integer",
+                    "description": "Only include notifications above of offset"
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "type": "integer",
+                    "description": "Limit number of notifications"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "notifications"
+                ],
+                "summary": "Get Notifications",
+                "description": "Retreives notification history",
+                "operationId": "getNotifications",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GetNotificationsResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/notifications/{notificationsId}": {
+            "parameters": [
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "type": "string",
+                    "required": false,
+                    "description": "The value to provide in the Authorization header of ANET API request"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "notifications"
+                ],
+                "summary": "Get a Notification",
+                "description": "Retreives a notification history",
+                "operationId": "getNotification",
+                "parameters": [
+                    {
+                        "name": "notificationsId",
+                        "in": "path",
+                        "description": "ID of notification to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GetNotificationResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "System Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/invoices": {
+            "post": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Create Invoice API",
+                "description": "ANet API for creating new invoices",
+                "operationId": "createInvoice",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "createInvoice",
+                        "in": "body",
+                        "description": "The \"create invoice \" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateInvoice"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Invoice"
+                        }
+                    },
+                    "202": {
+                        "description": "Invoice Created, Problem with sending email",
+                        "schema": {
+                            "$ref": "#/definitions/Invoice"
+                        }
+                    },
+                    "400": {
+                        "description": "Merchant not updated",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Get List of Invoices",
+                "description": "ANet API for getting list of invoices",
+                "operationId": "getAllInvoices",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer",
+                        "required": true,
+                        "description": "Page offset number"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer",
+                        "required": true,
+                        "description": "Number of items to be returned"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/InvoicesCollection"
+                        }
+                    },
+                    "400": {
+                        "description": "Merchant not updated",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/invoices/{invoiceNumber}": {
+            "get": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Get Invoice Details",
+                "description": "ANet API to get invoice details",
+                "operationId": "getInvoice",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "invoiceNumber",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Invoice ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Invoice"
+                        }
+                    }
+                },
+                "security": []
+            },
+            "put": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Update Invoice API",
+                "description": "ANet APIs for editing an invoice",
+                "operationId": "updateInvoice",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "invoiceNumber",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Invoice ID",
+                        "required": true
+                    },
+                    {
+                        "name": "updateInvoice",
+                        "in": "body",
+                        "description": "The \"update invoice \" model",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateInvoice"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Invoice"
+                        }
+                    },
+                    "400": {
+                        "description": "Merchant not updated",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
+        "/invoices/{invoiceNumber}/actions": {
+            "post": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Perform an action on Invoice",
+                "description": "ANet API to Perform an action on Invoice",
+                "operationId": "performActions",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "The value to provide in the Authorization header of ANET API request"
+                    },
+                    {
+                        "name": "invoiceNumber",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Invoice ID",
+                        "required": true
+                    },
+                    {
+                        "name": "invoiceAction",
+                        "in": "body",
+                        "description": "Perform an action on invoice",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/InvoiceAction"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Invoice"
+                        }
+                    }
+                },
+                "security": []
+            }
+        }
+    },
+    "definitions": {
+        "CollectionLinks": {
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/Link"
+                },
+                "next": {
+                    "$ref": "#/definitions/Link"
+                },
+                "previous": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Link": {
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "URI of the linked resource."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Label of the linked resource."
+                },
+                "method": {
+                    "type": "string",
+                    "description": "HTTP method of the linked resource."
+                }
+            }
+        },
+        "SelfLink": {
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+      "Address": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/BaseAddress"
+          },
+          {
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "default": {
+                "type": "boolean",
+                "x-example": "true"
+              },
+              "_links": {
+                "$ref": "#/definitions/AddressLinks"
+              }
+            }
+          }
+        ]
+      },
+        "BaseAddress": {
+            "properties": {
+                "address1": {
+                    "type": "string",
+                    "x-example": "123 Main St."
+                },
+                "administrativeArea": {
+                    "type": "string",
+                    "x-example": "WA"
+                },
+                "company": {
+                    "type": "string",
+                    "x-example": ""
+                },
+                "country": {
+                    "type": "string",
+                    "x-example": "USA"
+                },
+                "firstName": {
+                    "type": "string",
+                    "x-example": "John"
+                },
+                "lastName": {
+                    "type": "string",
+                    "x-example": "Doe"
+                },
+                "locality": {
+                    "type": "string",
+                    "x-example": "Bellevue"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "x-example": "000-000-0000"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "x-example": "98004"
+                }
+            }
+        },
+        "AddressList": {
+            "properties": {
+                "addresses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Addresses"
+                    }
+                }
+            }
+        },
+        "Addresses": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                 "address1": {
+                    "type": "string",
+                    "x-example": "123 Main St."
+                },
+                "administrativeArea": {
+                    "type": "string",
+                    "x-example": "WA"
+                },
+                "company": {
+                    "type": "string",
+                    "x-example": ""
+                },
+                "country": {
+                    "type": "string",
+                    "x-example": "USA"
+                },
+                "firstName": {
+                    "type": "string",
+                    "x-example": "John"
+                },
+                "lastName": {
+                    "type": "string",
+                    "x-example": "Doe"
+                },
+                "locality": {
+                    "type": "string",
+                    "x-example": "Bellevue"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "x-example": "000-000-0000"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "x-example": "98004"
+                },
+                "_links": {
+                    "$ref": "#/definitions/AddressLinks"
+                }
+            }
+        },
+        "AddressCollection": {
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/CollectionLinks"
+                },
+                "_embedded": {
+                    "$ref": "#/definitions/AddressList"
+                },
+                "totalAddresses": {
+                    "type": "integer",
+                    "x-example": 1243
+                }
+            }
+        },
+        "Identifier": {
+            "description": "Model for Identifier",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "x-example": "customer-profile-email@here.com"
+                },
+                "reference": {
+                    "type": "string",
+                    "x-example": "Merchant_Customer_ID"
+                }
+            }
+        },
+        "CreditCard": {
+            "description": "Model for CreditCard",
+            "required": [
+                "cardNumber",
+                "expirationDate"
+            ],
+            "properties": {
+                "cardNumber": {
+                    "type": "string",
+                    "x-example": "4111111111111111"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "x-example": "2023-12"
+                },
+				"cardType": {
+                    "type": "string"
+                },
+                "cardCode": {
+                    "type": "string",
+                    "x-example": "123"
+                }
+            }
+        },
+        "BankAccount": {
+            "description": "Model for BankAccount",
+            "required": [
+                "routingNumber",
+                "accountNumber",
+                "nameOnAccount"
+            ],
+            "properties": {
+                "accountType": {
+                    "type": "string"
+                },
+                "routingNumber": {
+                    "type": "string"
+                },
+                "accountNumber": {
+                    "type": "string"
+                },
+                "nameOnAccount": {
+                    "type": "string"
+                },
+                "eCheckType": {
+                    "type": "string"
+                },
+                "bankName": {
+                    "type": "string"
+                },
+                "checkNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "CustomerPayment": {
+            "required": [
+                "customerId"
+            ],
+            "properties": {
+                "customerId": {
+                    "type": "string",
+                    "x-example": 10
+                },
+                "paymentMethodId": {
+                    "type": "string",
+                    "x-example": 2016
+                }
+            }
+        },
+        "PaymentInstrument": {
+            "description": "Model for PaymentInstrument",
+            "properties": {
+                "creditCard": {
+                    "$ref": "#/definitions/CreditCard"
+                },
+                "bankAccount": {
+                    "$ref": "#/definitions/BankAccount"
+                },
+                "fluidData": {
+                    "$ref": "#/definitions/FluidData"
+                },
+                "customer": {
+                    "$ref": "#/definitions/CustomerPayment"
+                },
+                "validate": {
+                    "type": "boolean",
+                    "x-example": "true"
+                }
+            }
+        },
+        "PaymentMethodLinks": {
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/Link"
+                },
+                "customer": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "AddressLinks": {
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/Link"
+                },
+                "customer": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "CustomerLinks": {
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/Link"
+                },
+                "paymentMethods": {
+                    "$ref": "#/definitions/Link"
+                },
+                "addresses": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "PaymentLinks": {
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/Link"
+                },
+                "refund": {
+                    "$ref": "#/definitions/Link"
+                },
+                "capture": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "PaymentMethod": {
+            "description": "Model for PaymentMethod",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for paymentMethod."
+                },
+                "default": {
+                    "type": "boolean",
+                    "x-example": "true"
+                },
+                "billTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                },
+                "paymentInstrument": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                },
+                "_links": {
+                    "$ref": "#/definitions/PaymentMethodLinks"
+                }
+            }
+        },
+        "PaymentMethodList": {
+            "properties": {
+                "paymentMethods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PaymentMethods"
+                    }
+                }
+            }
+        },
+        "PaymentMethods": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "default": {
+                    "type": "boolean"
+                },
+                "paymentInstrument": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                },
+                "_links": {
+                    "$ref": "#/definitions/PaymentMethodLinks"
+                }
+            }
+        },
+        "PaymentMethodCollection": {
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/CollectionLinks"
+                },
+                "_embedded": {
+                    "$ref": "#/definitions/PaymentMethodList"
+                },
+                "totalPaymentMethods": {
+                    "type": "integer",
+                    "x-example": 1243
+                }
+            }
+        },
+        "CustomerList": {
+            "properties": {
+                "customers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Customer"
+                    }
+                }
+            }
+        },
+        "CustomerCollection": {
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/CollectionLinks"
+                },
+                "_embedded": {
+                    "$ref": "#/definitions/CustomerList"
+                },
+                "totalCustomers": {
+                    "type": "integer",
+                    "x-example": 1243
+                }
+            }
+        },
+        "CreateCustomerAddress": {
+            "description": "Model for CreateCustomerAddress",
+            "required": [
+                "address1"
+            ],
+            "properties": {
+                "address1": {
+                    "type": "string",
+                    "x-example": "123 Main St."
+                },
+                "administrativeArea": {
+                    "type": "string",
+                    "x-example": "WA"
+                },
+                "company": {
+                    "type": "string",
+                    "x-example": ""
+                },
+                "country": {
+                    "type": "string",
+                    "x-example": "USA"
+                },
+                "default": {
+                    "type": "boolean",
+                    "x-example": "true"
+                },
+                "firstName": {
+                    "type": "string",
+                    "x-example": "John"
+                },
+                "lastName": {
+                    "type": "string",
+                    "x-example": "Doe"
+                },
+                "locality": {
+                    "type": "string",
+                    "x-example": "Bellevue"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "x-example": "000-000-0000"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "x-example": "98004"
+                }
+            }
+        },
+        "CreatePaymentMethod": {
+            "description": "Model for CreatePaymentMethod",
+            "properties": {
+                "addressId": {
+                    "type": "string"
+                },
+                "billTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                },
+                "default": {
+                    "type": "boolean",
+                    "x-example": "true"
+                },
+                "payment": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                }
+            }
+        },
+        "CreateCustomer": {
+            "description": "Model for CreateCustomer",
+            "required": [
+                "identifier"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "x-example": "Customer Description"
+                },
+                "identifier": {
+                    "$ref": "#/definitions/Identifier"
+                },
+                "paymentMethod": {
+                    "$ref": "#/definitions/CreatePaymentMethod"
+                }
+            }
+        },
+        "Customer": {
+            "description": "Model for Customer",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for customer."
+                },
+                "description": {
+                    "type": "string",
+                    "x-example": "Customer Description"
+                },
+                "identifier": {
+                    "$ref": "#/definitions/Identifier"
+                },
+                "_links": {
+                    "$ref": "#/definitions/CustomerLinks"
+                }
+            }
+        },
+        "Payment": {
+            "description": "Model for Payment",
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/PaymentLinks"
+                },
+                "id": {
+                    "type": "string",
+                    "x-example": 2252111088
+                },
+                "solution": {
+                    "$ref": "#/definitions/Solution"
+                },
+                "batch": {
+                    "$ref": "#/definitions/Batch"
+                },
+                "submitTimeUTC": {
+                    "type": "string",
+                    "x-example": "2016-03-01T23:20:25.997Z"
+                },
+                "submitTimeLocal": {
+                    "type": "string",
+                    "x-example": "2016-03-01T15:20:25.997Z"
+                },
+                "transactionStatus": {
+                    "type": "string",
+                    "x-example": "Approved"
+                },
+                "processor": {
+                    "$ref": "#/definitions/Processor"
+                },
+                "recurringBilling": {
+                    "type": "boolean",
+                    "x-example": false
+                },
+                "customerIp": {
+                    "type": "string",
+                    "x-example": "192.168.1.1"
+                },
+                "order": {
+                    "$ref": "#/definitions/Order"
+                },
+                "authAmount": {
+                    "type": "string",
+                    "x-example": 5
+                },
+                "settleAmount": {
+                    "type": "string",
+                    "x-example": 5
+                },
+                "tax": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "shipping": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "duty": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "lineItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LineItem"
+                    }
+                },
+                "taxExempt": {
+                    "type": "boolean",
+                    "x-example": false
+                },
+                "paymentInstrument": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                },
+                "fraudInformation": {
+                    "$ref": "#/definitions/FraudInformation"
+                },
+                "customerId": {
+                    "type": "string",
+                    "x-example": 2252111088
+                },
+                "billTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                },
+                "shipTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                }
+            }
+        },
+        "Processor": {
+            "properties": {
+                "authCode": {
+                    "type": "string",
+                    "x-example": "D1T1KD"
+                },
+                "avsResponse": {
+                    "type": "string",
+                    "x-example": "Y"
+                },
+                "cardCodeResponse": {
+                    "type": "string",
+                    "x-example": "P"
+                }
+            }
+        },
+        "Order": {
+            "properties": {
+                "purchaseOrderNumber": {
+                    "type": "string",
+                    "x-example": 456654
+                }
+            }
+        },
+        "ExtendedAmount": {
+            "properties": {
+                "amount": {
+                    "type": "string",
+                    "x-example": "4.26"
+                },
+                "description": {
+                    "type": "string",
+                    "x-example": "level2 tax"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "LineItem": {
+            "required": [
+                "itemId",
+                "name",
+                "description",
+                "quantity",
+                "unitPrice"
+            ],
+            "properties": {
+                "itemId": {
+                    "type": "string",
+                    "x-example": 1
+                },
+                "name": {
+                    "type": "string",
+                    "x-example": "vase"
+                },
+                "description": {
+                    "type": "string",
+                    "x-example": "Cannes logo"
+                },
+                "quantity": {
+                    "type": "integer",
+                    "x-example": 18
+                },
+                "unitPrice": {
+                    "type": "string",
+                    "x-example": "45"
+                },
+                "taxable": {
+                    "type": "boolean",
+                    "x-example": false
+                }
+            }
+        },
+        "ForcedCaptureRequest": {
+            "description": "Model for ForcedCaptureRequest",
+            "title": "ForcedCaptureRequest",
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "authCode": {
+                    "type": "string"
+                },
+                "paymentInstrument": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                }
+            },
+            "required": [
+                "amount",
+                "authCode",
+                "paymentInstrument"
+            ]
+        },
+        "RefundRequest": {
+            "description": "Model for RefundRequest",
+            "title": "RefundRequest",
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "order": {
+                    "$ref": "#/definitions/Order"
+                },
+                "lineItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LineItem"
+                    }
+                },
+                "tax": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "shipping": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "duty": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "paymentInstrument": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                },
+                "billTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                },
+                "shipTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                }
+            },
+            "required": [
+                "amount",
+                "paymentInstrument"
+            ]
+        },
+        "PaymentCollection": {
+            "description": "Model for PaymentCollection",
+            "properties": {
+                "_link": {
+                    "$ref": "#/definitions/CollectionLinks"
+                },
+                "_embedded": {
+                    "$ref": "#/definitions/PaymentsList"
+                },
+                "totalTransactions": {
+                    "type": "integer",
+                    "x-example": 214
+                }
+            }
+        },
+        "PaymentsList": {
+            "properties": {
+                "payments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Payments"
+                    }
+                }
+            }
+        },
+        "Payments": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-example": 123
+                },
+                "submitTimeUTC": {
+                    "type": "string"
+                },
+                "transactionStatus": {
+                    "type": "string"
+                },
+                "_links": {
+                    "$ref": "#/definitions/SelfLink"
+                }
+            }
+        },
+        "PaymentRequest": {
+            "description": "Model for PaymentRequest",
+            "title": "PaymentRequest",
+            "type": "object",
+            "properties": {
+                "capture": {
+                    "type": "boolean"
+                },
+                "amountDetail": {
+                    "$ref": "#/definitions/AmountDetail"
+                },
+                "solution": {
+                    "$ref": "#/definitions/Solution"
+                },
+                "paymentInstrument": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                },
+                "billTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                },
+                "shipTo": {
+                    "$ref": "#/definitions/BaseAddress"
+                },
+                "customerIp": {
+                    "type": "string"
+                },
+                "order": {
+                    "$ref": "#/definitions/Order"
+                },
+                "tax": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "duty": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "shipping": {
+                    "$ref": "#/definitions/ExtendedAmount"
+                },
+                "lineItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LineItem"
+                    }
+                }
+            },
+            "required": [
+                "amountDetail",
+                "paymentInstrument"
+            ]
+        },
+        "CreditRequest": {
+            "description": "Model for CreditRequest",
+            "title": "CreditRequest",
+            "type": "object",
+            "properties": {
+                "amountDetail": {
+                    "$ref": "#/definitions/AmountDetail"
+                },
+                "paymentInstrument": {
+                    "$ref": "#/definitions/PaymentInstrument"
+                }
+            },
+            "required": [
+                "amountDetail",
+                "paymentInstrument"
+            ]
+        },
+        "CaptureRequest": {
+            "description": "Model for CaptureRequest",
+            "title": "CaptureRequest",
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "amount"
+            ]
+        },
+        "FluidData": {
+            "description": "Model for FluidData",
+            "title": "FluidData",
+            "type": "object",
+            "properties": {
+                "descriptor": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "descriptor",
+                "value"
+            ]
+        },
+        "ErrorResponse": {
+            "description": "Model for Error Response",
+            "title": "ErrorResponse",
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "x-example": 404
+                },
+                "message": {
+                    "type": "string"
+                },
+                "reason": {
+                    "type": "string"
+                },
+                "informationLink": {
+                    "type": "string"
+                },
+                "correlationId": {
+                    "type": "string"
+                },
+                "details": {
+                    "$ref": "#/definitions/ErrorDetails"
+                }
+            },
+            "required": [
+                "status",
+                "message",
+                "reason"
+            ]
+        },
+        "ErrorDetails": {
+            "description": "Model for Error Details",
+            "title": "ErrorDetails",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                }
+            }
+        },
+        "Solution": {
+            "description": "Model for Solution",
+            "title": "Solution",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-example": "A1000004"
+                },
+                "name": {
+                    "type": "string",
+                    "x-example": "Shopping Cart"
+                },
+                "vendorName": {
+                    "type": "string"
+                }
+            }
+        },
+        "Batch": {
+            "description": "Model for Batch",
+            "title": "Batch",
+            "type": "object",
+            "properties": {
+                "batchID": {
+                    "type": "string"
+                },
+                "settlementState": {
+                    "type": "string"
+                },
+                "settlmentTimeUTC": {
+                    "type": "string"
+                }
+            }
+        },
+        "FraudInformation": {
+            "description": "Model for FraudInformation",
+            "title": "FraudInfromation",
+            "type": "object",
+            "properties": {
+                "fraudFilterList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FraudFilter"
+                    }
+                },
+                "fraudAction": {
+                    "type": "string"
+                }
+            }
+        },
+        "FraudFilter": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "action": {
+                    "type": "string"
+                }
+            }
+        },
+        "AmountDetail": {
+            "required": [
+                "amount"
+            ],
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                }
+            }
+        },
+        "EventType": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "x-example": "net.authorize.customer.created"
+                }
+            },
+            "description": "Model fro Event Type"
+        },
+        "CreateWebhookBody": {
+            "description": "Model for Create Webhook",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "New label of the Webhook",
+                    "x-example": "WebhookEvents"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "New Callback Url",
+                    "x-example": "https://requestb.in/1ffogbm1"
+                },
+                "eventTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of desired events for subscriptions",
+                    "x-example": [
+                        "net.authorize.customer.created",
+                        "net.authorize.customer.paymentProfile.created",
+                        "net.authorize.customer.subscription.created"
+                    ]
+                },
+                "status": {
+                    "type": "string",
+                    "description": "New status of the Webhook",
+                    "x-example": "Active"
+                }
+            }
+        },
+        "GetWebhookResponse": {
+            "description": "Response model for get a Webhook",
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/SelfLink"
+                },
+                "webhookId": {
+                    "type": "string",
+                    "description": "Label of the new Webhook",
+                    "x-example": "bb855023-a5b5-47b6-b039-68a41844618a"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Label of the new Webhook",
+                    "x-example": "WebhookEvents"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the new Webhook",
+                    "x-example": "Active"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Callback Url",
+                    "x-example": "https://requestb.in/1ffogbm1"
+                },
+                "eventTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of desired events for subscriptions",
+                    "x-example": [
+                        "net.authorize.customer.created",
+                        "net.authorize.customer.paymentProfile.created",
+                        "net.authorize.customer.subscription.created"
+                    ]
+                }
+            },
+            "required": [
+                "_links",
+                "webhookId",
+                "status",
+                "url",
+                "eventTypes"
+            ]
+        },
+        "Log": {
+            "description": "",
+            "properties": {
+                "statusCode": {
+                    "type": "integer"
+                },
+                "retryStage": {
+                    "type": "integer"
+                },
+                "retryCountInStage": {
+                    "type": "integer"
+                },
+                "retryDate": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "RetryLog": {
+            "description": "",
+            "properties": {
+                "logs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Log"
+                    }
+                }
+            },
+            "required": [
+                "logs"
+            ]
+        },
+        "Notification": {
+            "description": "Notification Model",
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/SelfLink"
+                },
+                "notificationId": {
+                    "type": "string",
+                    "description": "Label of the notification",
+                    "x-example": "WebhookEvents"
+                },
+                "deliveryStatus": {
+                    "type": "string",
+                    "description": "Status of the pings",
+                    "x-example": "Delivered"
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "Type of the pings",
+                    "x-example": "net.authorize.payment.authcapture.created"
+                },
+                "eventDate": {
+                    "type": "string",
+                    "description": "date time of the pings",
+                    "x-example": "2017-06-29T16:12:50.847"
+                },
+                "webhookId": {
+                    "type": "string",
+                    "description": "Label of the Webhook",
+                    "x-example": "179180a4-bba0-45a2-836c-d0c4438f462e"
+                }
+            },
+            "required": [
+                "_links",
+                "notificationId",
+                "deliveryStatus",
+                "eventType",
+                "eventDate",
+                "webhookId"
+            ]
+        },
+        "GetNotificationResponse": {
+            "description": "Response model for get a Notification",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Notification"
+                },
+                {
+                    "properties": {
+                        "retryLog": {
+                            "$ref": "#/definitions/RetryLog"
+                        }
+                    },
+                    "required": [
+                        "retryLog"
+                    ]
+                }
+            ]
+        },
+        "GetNotificationsResponse": {
+            "description": "Response model for get a Notification",
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/SelfLink"
+                },
+                "notifications": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Notification"
+                    }
+                }
+            },
+            "required": [
+                "_links",
+                "notifications"
+            ]
+        },
+        "CreateInvoice": {
+            "title": "Create Invoice",
+            "type": "object",
+            "properties": {
+                "invoiceNumber": {
+                    "type": "string",
+                    "x-example": "NM12345."
+                },
+                "description": {
+                    "type": "string",
+                    "x-example": "Plumbing invoice"
+                },
+                "customer": {
+                    "$ref": "#/definitions/Customer"
+                },
+                "payerName": {
+                    "type": "string",
+                    "x-example": "don"
+                },
+                "paymentDueDate": {
+                    "type": "string",
+                    "x-example": "true"
+                },
+                "subAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "discountPercent": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "discountAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "totalAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "lineItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LineItem"
+                    }
+                },
+                "tax": {
+                    "$ref": "#/definitions/Tax"
+                },
+                "sendEmailImmediately": {
+                    "type": "boolean",
+                    "x-example": true
+                }
+            },
+            "required": [
+                "customer",
+                "paymentDueDate",
+                "totalAmount",
+                "payerName"
+            ]
+        },
+        "UpdateInvoice": {
+            "description": "Model for Updating an Invoice",
+            "title": "Update Invoice",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "x-example": "Plumbing invoice"
+                },
+                "customer": {
+                    "$ref": "#/definitions/Customer"
+                },
+                "payerName": {
+                    "type": "string",
+                    "x-example": "don"
+                },
+                "paymentDueDate": {
+                    "type": "string",
+                    "x-example": "true"
+                },
+                "subAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "discountPercent": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "discountAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "totalAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "lineItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LineItem"
+                    }
+                },
+                "tax": {
+                    "$ref": "#/definitions/Tax"
+                }
+            },
+            "required": [
+                "customer",
+                "paymentDueDate",
+                "totalAmount",
+                "payerName"
+            ]
+        },
+        "Invoice": {
+            "title": "Invoice",
+            "type": "object",
+            "properties": {
+                "invoiceNumber": {
+                    "type": "string",
+                    "x-example": "NM12345."
+                },
+                "description": {
+                    "type": "string",
+                    "x-example": "Plumbing invoice"
+                },
+                "customer": {
+                    "$ref": "#/definitions/Customer"
+                },
+                "payerName": {
+                    "type": "string",
+                    "x-example": "don"
+                },
+                "paymentDueDate": {
+                    "type": "string",
+                    "x-example": "true"
+                },
+                "subAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "discountPercent": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "discountAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "totalAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "lineItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LineItem"
+                    }
+                },
+                "tax": {
+                    "$ref": "#/definitions/Tax"
+                },
+                "status": {
+                    "type": "string",
+                    "x-example": "Invoice Created/Email Send/Paid"
+                },
+                "createdDate": {
+                    "type": "string",
+                    "x-example": "1985-04-12T23:20:50.52Z"
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "x-example": "1985-04-12T23:20:50.52Z"
+                },
+                "transid": {
+                    "type": "string",
+                    "x-example": "123456"
+                },
+                "self": {
+                    "$ref": "#/definitions/Link"
+                },
+                "supportedActions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                }
+            }
+        },
+        "InvoiceAction": {
+            "description": "Do Action",
+            "title": "Perfoms Actions on Invoices",
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "x-example": "Send",
+                    "enum": [
+                        "Send",
+                        "Cancel"
+                    ]
+                },
+                "date": {
+                    "type": "string",
+                    "x-example": "1985-04-12T23:20:50.52Z"
+                }
+            },
+            "required": [
+                "action"
+            ]
+        },
+        "InvoicesCollection": {
+            "properties": {
+                "_links": {
+                    "$ref": "#/definitions/CollectionLinks"
+                },
+                "_embedded": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/InvoiceListInfo"
+                    }
+                },
+                "totalInvoices": {
+                    "type": "integer",
+                    "x-example": 23
+                }
+            }
+        },
+        "InvoiceListInfo": {
+            "description": "Invoice List Info",
+            "title": "Invoice List Info",
+            "type": "object",
+            "properties": {
+                "invoiceNumber": {
+                    "type": "string",
+                    "x-example": "NM12345."
+                },
+                "createdDate": {
+                    "type": "string",
+                    "x-example": "2016-11-11"
+                },
+                "payerName": {
+                    "type": "string",
+                    "x-example": "John Doe"
+                },
+                "paymentDueDate": {
+                    "type": "string",
+                    "x-example": "2016-11-11"
+                },
+                "totalAmount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "status": {
+                    "type": "string",
+                    "x-example": "Invoice Created/Email Send/Paid"
+                },
+                "self": {
+                    "$ref": "#/definitions/Link"
+                },
+                "supportedActions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                }
+            },
+            "required": [
+                "invoiceNumber",
+                "payerName",
+                "totalAmount"
+            ]
+        },
+        "Tax": {
+            "description": "Tax elements",
+            "title": "tax",
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "name": {
+                    "type": "string",
+                    "x-example": "John"
+                },
+                "taxPercent": {
+                    "type": "number",
+                    "x-example": 10
+                },
+                "description": {
+                    "type": "string",
+                    "x-example": "Doe"
+                }
+            },
+            "required": [
+                "amount"
+            ]
+        }
+    }
+}
