@@ -1,5 +1,5 @@
 {
-	"packagePath" : "authorizenet",
+	"packagePath" : "mirror-library-php",
 	"composerVendorName" : "AuthorizeNet",
 	"composerProjectName" : "authorizenet-rest",
 	"artifactVersion" : "0.0.9",
